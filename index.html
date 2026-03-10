@@ -130,14 +130,14 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .product-img{width:50%;height:auto;object-fit:contain;aspect-ratio:3/5;display:block;transition:transform .6s ease;}
 .product-img.back{position:static;opacity:1;}
 .product-card:hover .product-img.front,.product-card:hover .product-img.back{transform:scale(1.03);}
-.product-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 50%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:80px;opacity:0;transition:opacity .4s;}
+.product-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 50%);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;z-index:2;}
 .product-card:hover .product-overlay{opacity:1;}
 .product-buy-btn{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:14px 32px;border:none;cursor:none;transform:translateY(16px);transition:transform .4s,background .3s;}
 .product-card:hover .product-buy-btn{transform:translateY(0);}
 .product-buy-btn:hover{background:var(--white);}
 .product-tag{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:.3em;text-transform:uppercase;padding:5px 12px;}
 .stock-badge{position:absolute;top:20px;left:20px;background:rgba(10,10,10,.85);color:var(--gold);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(201,168,76,.4);}
-.product-info{padding:20px 28px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.product-info{position:relative;z-index:3;padding:20px 28px 28px;;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
 .product-info-left{flex:1;}
 .product-name{font-family:var(--serif);font-size:22px;font-weight:300;}
 .product-tagline{font-size:11px;color:var(--mid);letter-spacing:.1em;margin-top:4px;font-style:italic;}
