@@ -126,11 +126,11 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 
 /* product card */
 .product-card{position:relative;overflow:hidden;background:var(--grey);cursor:none;}
-.product-img-wrap{position:relative;overflow:hidden;aspect-ratio:3/5;background:#f8f7f5;}
-.product-img{width:100%;height:100%;object-fit:contain;transition:transform .9s cubic-bezier(.25,.46,.45,.94),opacity .5s ease;}
-.product-img.back{position:absolute;inset:0;opacity:0;}
-.product-card:hover .product-img.front{transform:scale(1.04);opacity:0;}
-.product-card:hover .product-img.back{opacity:1;transform:scale(1.04);}
+.product-img-wrap{position:relative;overflow:hidden;background:#f8f7f5;display:flex;flex-direction:row;}
+.product-img{width:50%;height:auto;object-fit:contain;aspect-ratio:3/5;transition:transform .6s cubic-bezier(.25,.46,.45,.94);display:block;}
+.product-img.back{position:static;opacity:1;}
+.product-card:hover .product-img.front{transform:scale(1.03);}
+.product-card:hover .product-img.back{transform:scale(1.03);}
 .product-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 50%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:80px;opacity:0;transition:opacity .4s;}
 .product-card:hover .product-overlay{opacity:1;}
 .product-buy-btn{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:14px 32px;border:none;cursor:none;transform:translateY(16px);transition:transform .4s,background .3s;}
@@ -231,7 +231,11 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
   .figure-text-side{padding:60px 24px !important;}
   .figure-separator{margin:0 24px;}
   .product-grid{grid-template-columns:1fr;gap:2px}
-  .product-img-wrap{aspect-ratio:3/5;background:#f8f7f5;}
+  .product-img-wrap{display:block;position:relative;aspect-ratio:3/5;background:#f8f7f5;}
+  .product-img{width:100%;height:100%;object-fit:contain;aspect-ratio:unset;position:static;}
+  .product-img.back{position:absolute;inset:0;opacity:0;width:100%;height:100%;}
+  .product-card.tapped .product-img.front{opacity:0;}
+  .product-card.tapped .product-img.back{opacity:1;}
   .product-overlay{opacity:1;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 40%)}
   .product-buy-btn{transform:translateY(0);font-size:11px;padding:16px 28px}
   .product-info{padding:16px 20px 20px;flex-wrap:wrap}
@@ -245,7 +249,6 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
   footer{padding:60px 20px 32px}
   .cart-drawer{width:100vw;border-left:none}
   .marquee-track{gap:40px}.marquee-track span{font-size:9px}
-  .product-card.tapped .product-img.front{opacity:0}.product-card.tapped .product-img.back{opacity:1}
   .popup-box{padding:40px 28px}.popup-form{flex-direction:column}
   .popup-input{border-right:1px solid rgba(255,255,255,.12);border-bottom:none}.popup-submit{padding:14px}
   .figure-block{margin-bottom:56px;padding-bottom:56px}
@@ -339,7 +342,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
     <p class="section-text reveal">Il y a plus de deux mille ans, des artisans grecs ont taillé dans la pierre des figures qui devaient traverser l'éternité. Ils ne savaient pas que des empires allaient s'effondrer, que des guerres allaient tout effacer, que des siècles d'oubli allaient passer.</p>
     <p class="section-text reveal">Les figures, elles, sont restées.</p>
     <p class="section-text reveal">AETERNA part de là. Quatre personnages que l'histoire a rendus immortels, pas parce qu'ils étaient parfaits, mais parce qu'ils incarnaient quelque chose de fondamental. La victoire. La démesure. Le pouvoir. L'injustice. Des forces aussi vivantes aujourd'hui qu'elles l'étaient dans l'Antiquité.</p>
-    <p class="section-text reveal">Chaque pièce est brodée avec la même obsession du détail que ces artisans anonymes qui sculptaient sans savoir que leur travail durerait deux millénaires.</p>
+    <p class="section-text reveal">Chaque pièce est brodée à la main en Suisse. Point par point. Avec la même obsession du détail que ces artisans anonymes qui sculptaient sans savoir que leur travail durerait deux millénaires.</p>
     <div class="section-divider reveal"></div>
     <p class="section-quote reveal">"Legends never dies. They become eternal."</p>
   </div>
@@ -554,7 +557,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
     </div>
     <div class="livraison-grid">
       <div class="livraison-card reveal"><span class="livraison-icon">📦</span><h3 class="livraison-title">Livraison Suisse</h3><p class="livraison-desc">Expédition via Swiss Post dans les 3–5 jours ouvrables après confirmation de la commande. Chaque pièce est emballée individuellement avec soin.</p><span class="livraison-highlight">CHF 7.00 — Suisse uniquement au lancement</span></div>
-      <div class="livraison-card reveal"><span class="livraison-icon">🔄</span><h3 class="livraison-title">Retours</h3><p class="livraison-desc">Tu as 14 jours pour retourner une pièce non portée, dans son emballage d'origine. Contacte-nous par email avant de retourner l'article.</p><span class="livraison-highlight">girardetromain@gmail.com</span></div>
+      <div class="livraison-card reveal"><span class="livraison-icon">🔄</span><h3 class="livraison-title">Retours</h3><p class="livraison-desc">Tu as 14 jours pour retourner une pièce non portée, dans son emballage d'origine. Contacte-nous par email avant de retourner l'article.</p><span class="livraison-highlight"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="65020c170417010011170a08040c0b250208040c094b060a08">[email&#160;protected]</a></span></div>
       <div class="livraison-card reveal"><span class="livraison-icon">✦</span><h3 class="livraison-title">Artisanal & Unique</h3><p class="livraison-desc">Chaque broderie est réalisée à la main en Suisse. De légères variations font partie de l'authenticité de chaque pièce — elles ne constituent pas un défaut.</p><span class="livraison-highlight">Fabriqué à Genève, Suisse</span></div>
     </div>
   </div>
@@ -588,7 +591,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
       <ul class="footer-links">
         <li><a href="https://tiktok.com/@vizionembroidery" target="_blank" rel="noopener">TikTok</a></li>
         <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="mailto:girardetromain@gmail.com">Contact</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#87e0eef5e6f5e3e2f3f5e8eae6eee9c7e0eae6eeeba9e4e8ea">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -608,7 +611,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
   <div class="cart-footer"><p class="cart-note">Paiement sécurisé via Shopify · Expédition Suisse</p></div>
 </aside>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // cursor
 const cursor=document.querySelector('.cursor'),cursorRing=document.querySelector('.cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -671,7 +674,11 @@ document.querySelectorAll('.product-card').forEach(card=>{
     card.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
   }));
-  card.addEventListener('click',e=>{if(window.innerWidth<=900&&!e.target.closest('button'))card.classList.toggle('tapped');});
+  // swipe mobile
+  let txStart=0;
+  const imgW=card.querySelector('.product-img-wrap');
+  imgW.addEventListener('touchstart',e=>{txStart=e.touches[0].clientX;},{passive:true});
+  imgW.addEventListener('touchend',e=>{if(window.innerWidth>900)return;const d=txStart-e.changedTouches[0].clientX;if(Math.abs(d)>40)card.classList.toggle('tapped');},{passive:true});
 });
 
 // Shopify
@@ -686,8 +693,4 @@ async function initShopify(key,cid){
   ShopifyBuy.UI.init(client).createComponent('product',{id:PRODUCTS[key],node:document.getElementById(cid),moneyFormat:'CHF %7B%7Bamount%7D%7D',options:{product:{styles:{button:{'font-family':'Karla,sans-serif','font-size':'10px','letter-spacing':'0.3em','text-transform':'uppercase','font-weight':'600','padding-top':'16px','padding-bottom':'16px','background-color':'#C9A84C','color':'#0a0a0a',':hover':{'background-color':'#f4f2ee'},'border-radius':'0','width':'100%'},title:{'font-family':'Cormorant Garamond,serif','font-size':'22px','font-weight':'300','color':'#f4f2ee'},price:{'font-family':'Cormorant Garamond,serif','font-size':'20px','color':'#C9A84C'}},text:{button:'Ajouter au panier'},layout:'vertical',contents:{img:false,title:true,price:true}},cart:{styles:{button:{'font-family':'Karla,sans-serif','font-size':'10px','letter-spacing':'0.3em','text-transform':'uppercase','font-weight':'600','background-color':'#C9A84C','color':'#0a0a0a',':hover':{'background-color':'#f4f2ee'},'border-radius':'0','width':'100%'}},text:{total:'Total',button:'Commander — Checkout'}}}});
 }
 document.querySelectorAll('[data-product]').forEach(btn=>{
-  if(!btn.classList.contains('color-btn')&&!btn.classList.contains('size-btn'))btn.addEventListener('click',async()=>{const key=btn.dataset.product;openCart();const c=document.getElementById('shopify-buy-button-container');c.innerHTML='';await initShopify(key,'shopify-buy-button-container');});
-});
-</script>
-</body>
-</html>
+  if(!btn.classList.contains('color-btn')&&!
