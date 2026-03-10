@@ -127,7 +127,7 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 /* product card */
 .product-card{position:relative;overflow:hidden;background:var(--grey);cursor:none;}
 .product-img-wrap{position:relative;overflow:hidden;background:#f8f7f5;display:flex;flex-direction:row;}
-.product-img{width:50%;height:auto;object-fit:contain;aspect-ratio:3/5;transition:transform .6s cubic-bezier(.25,.46,.45,.94);display:block;}
+.product-img{width:50%;height:auto;object-fit:contain;aspect-ratio:3/5;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
 .product-img.back{position:static;opacity:1;}
 .product-card:hover .product-img.front{transform:scale(1.03);}
 .product-card:hover .product-img.back{transform:scale(1.03);}
@@ -249,6 +249,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
   footer{padding:60px 20px 32px}
   .cart-drawer{width:100vw;border-left:none}
   .marquee-track{gap:40px}.marquee-track span{font-size:9px}
+  .product-card.tapped .product-img.front{opacity:0}.product-card.tapped .product-img.back{opacity:1}
   .popup-box{padding:40px 28px}.popup-form{flex-direction:column}
   .popup-input{border-right:1px solid rgba(255,255,255,.12);border-bottom:none}.popup-submit{padding:14px}
   .figure-block{margin-bottom:56px;padding-bottom:56px}
@@ -674,11 +675,15 @@ document.querySelectorAll('.product-card').forEach(card=>{
     card.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
   }));
-  // swipe mobile
-  let txStart=0;
-  const imgW=card.querySelector('.product-img-wrap');
-  imgW.addEventListener('touchstart',e=>{txStart=e.touches[0].clientX;},{passive:true});
-  imgW.addEventListener('touchend',e=>{if(window.innerWidth>900)return;const d=txStart-e.changedTouches[0].clientX;if(Math.abs(d)>40)card.classList.toggle('tapped');},{passive:true});
+  // swipe mobile pour flip avant/dos
+  const imgWrap = card.querySelector('.product-img-wrap');
+  let touchStartX = 0;
+  imgWrap.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+  imgWrap.addEventListener('touchend', e => {
+    if (window.innerWidth > 900) return;
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) card.classList.toggle('tapped');
+  }, {passive:true});
 });
 
 // Shopify
