@@ -12,7 +12,6 @@
   <meta property="og:url" content="https://vzn-official.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Favicon SVG inline -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text y='.9em' font-size='72' x='50%' text-anchor='middle' font-family='serif' fill='%23C9A84C'>V</text></svg>">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;600&display=swap');
@@ -74,24 +73,18 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .popup-success{display:none;text-align:center;padding:20px 0;}
 .popup-success em{font-family:var(--serif);font-size:28px;font-style:italic;color:var(--gold);display:block;margin-bottom:8px;}
 
-/* hero */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#111 40%,#0d0d0d 100%);}
-.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,.04) 0%,transparent 60%);}
-.hero-marquee-bg{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(120px,18vw,260px);font-weight:300;color:rgba(255,255,255,.022);white-space:nowrap;letter-spacing:-.02em;line-height:1;overflow:hidden;user-select:none;pointer-events:none;}
-.hero-content{position:relative;z-index:2;max-width:700px;}
-.hero-eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:block;opacity:0;animation:fadeUp 1s ease .3s forwards;}
-.hero-title{font-family:var(--serif);font-size:clamp(56px,9vw,120px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-bottom:32px;opacity:0;animation:fadeUp 1s ease .5s forwards;}
-.hero-title em{font-style:italic;color:var(--gold);}
-.hero-sub{font-size:13px;color:var(--mid);letter-spacing:.15em;line-height:1.8;margin-bottom:48px;max-width:440px;opacity:0;animation:fadeUp 1s ease .7s forwards;}
-.hero-actions{display:flex;gap:24px;align-items:center;opacity:0;animation:fadeUp 1s ease .9s forwards;}
-.btn-primary{display:inline-block;background:var(--gold);color:var(--black);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:16px 36px;transition:background .3s,transform .3s;cursor:none;border:none;}
-.btn-primary:hover{background:var(--white);transform:translateY(-2px);}
-.btn-ghost{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:color .3s,border-color .3s;}
-.btn-ghost:hover{color:var(--white);border-color:var(--gold);}
-.hero-scroll{position:absolute;bottom:40px;right:48px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0;animation:fadeIn 1s ease 1.4s forwards;}
-.hero-scroll span{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.3);writing-mode:vertical-rl;}
-.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+/* ===================== HERO LOGO ===================== */
+.hero-logo{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;}
+.hero-logo-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,#141414 0%,#0a0a0a 70%);}
+.hero-logo-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:glowPulse 4s ease-in-out infinite;}
+.hero-logo-content{position:relative;z-index:2;}
+.hero-logo-mark{font-family:var(--serif);font-size:clamp(100px,20vw,220px);font-weight:300;letter-spacing:.15em;line-height:1;opacity:0;animation:fadeUp 1.2s ease .3s forwards;}
+.hero-logo-mark span{color:var(--gold);}
+.hero-logo-sub{font-size:10px;letter-spacing:.6em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:24px;opacity:0;animation:fadeUp 1s ease .8s forwards;}
+.hero-logo-divider{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);margin:40px auto 0;opacity:0;animation:fadeIn 1s ease 1.2s forwards;}
+.hero-logo-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeIn 1s ease 1.6s forwards;}
+.hero-logo-scroll span{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.25);}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite;}
 
 /* marquee */
 .marquee-section{border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);padding:18px 0;overflow:hidden;background:rgba(201,168,76,.03);}
@@ -99,12 +92,36 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .marquee-track span{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.6);}
 .marquee-track span.sep{color:var(--gold);}
 
-/* collection */
-.collection{padding:140px 48px;max-width:1500px;margin:0 auto;}
-.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:80px;}
-.section-eyebrow{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
-.section-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1;}
-.section-note{font-size:12px;color:var(--mid);letter-spacing:.1em;text-align:right;line-height:1.8;}
+/* ===================== SECTIONS COMMUNES ===================== */
+.section-block{padding:140px 48px;max-width:900px;margin:0 auto;}
+.section-block.wide{max-width:1400px;}
+.section-eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:24px;}
+.section-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1;margin-bottom:40px;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-text{font-size:14px;color:var(--mid);line-height:2;letter-spacing:.04em;margin-bottom:24px;}
+.section-text:last-child{margin-bottom:0;}
+.section-divider{width:60px;height:1px;background:var(--gold);margin:56px 0;}
+.section-quote{font-family:var(--serif);font-size:clamp(20px,3vw,28px);font-weight:300;font-style:italic;line-height:1.5;color:var(--white);margin-bottom:24px;padding-left:24px;border-left:2px solid var(--gold);}
+
+/* figure + product layout */
+.figure-product-block{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1400px;margin:0 auto;}
+.figure-product-block.reverse{direction:rtl;}
+.figure-product-block.reverse > *{direction:ltr;}
+.figure-text-side{padding:80px 64px !important;max-width:none !important;}
+.figure-separator{max-width:1400px;margin:0 auto;height:1px;background:rgba(255,255,255,.06);}
+.figure-name{font-family:var(--serif);font-size:clamp(40px,5vw,72px);font-weight:300;line-height:1;margin-bottom:8px;}
+.figure-name em{font-style:italic;color:var(--gold);}
+.figure-subtitle{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:block;}
+.figure-text{font-size:14px;color:var(--mid);line-height:2;letter-spacing:.04em;margin-bottom:16px;}
+.figure-quote{font-family:var(--serif);font-size:clamp(16px,2vw,20px);font-style:italic;color:rgba(255,255,255,.6);margin-top:24px;padding-left:20px;border-left:1px solid var(--gold);}
+
+/* dark band */
+.dark-band{background:var(--grey);}
+
+/* ===================== COLLECTION ===================== */
+.collection-section{padding:140px 48px;max-width:1500px;margin:0 auto;}
+.collection-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:80px;}
+.collection-note{font-size:12px;color:var(--mid);letter-spacing:.1em;text-align:right;line-height:1.8;}
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
 
 /* product card */
@@ -120,10 +137,7 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .product-card:hover .product-buy-btn{transform:translateY(0);}
 .product-buy-btn:hover{background:var(--white);}
 .product-tag{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:.3em;text-transform:uppercase;padding:5px 12px;}
-.stock-badge{position:absolute;top:20px;left:20px;background:rgba(10,10,10,.85);color:var(--white);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(255,255,255,.15);}
-.stock-badge.low{border-color:rgba(201,168,76,.5);color:var(--gold);}
-
-/* product info */
+.stock-badge{position:absolute;top:20px;left:20px;background:rgba(10,10,10,.85);color:var(--gold);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(201,168,76,.4);}
 .product-info{padding:20px 28px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
 .product-info-left{flex:1;}
 .product-name{font-family:var(--serif);font-size:22px;font-weight:300;}
@@ -134,8 +148,6 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .color-btn.blanc{background:#f0ede8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);}
 .color-btn.active{border-color:var(--gold);transform:scale(1.15);}
 .color-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);margin-left:8px;}
-
-/* size selector */
 .size-selector{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;}
 .size-btn{background:none;border:1px solid rgba(255,255,255,.15);color:var(--mid);font-family:var(--sans);font-size:10px;letter-spacing:.2em;padding:5px 10px;cursor:none;transition:border-color .25s,color .25s,background .25s;}
 .size-btn:hover{border-color:rgba(255,255,255,.4);color:var(--white);}
@@ -143,23 +155,13 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .product-right{text-align:right;padding-top:4px;}
 .product-price{font-family:var(--serif);font-size:22px;color:var(--gold);}
 
-/* story */
-.story{padding:140px 48px;max-width:900px;margin:0 auto;text-align:center;}
-.story-eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:40px;}
-.story-quote{font-family:var(--serif);font-size:clamp(28px,4vw,48px);font-weight:300;font-style:italic;line-height:1.3;margin-bottom:40px;}
-.story-text{font-size:14px;color:var(--mid);line-height:2;letter-spacing:.05em;max-width:600px;margin:0 auto 40px;}
-.story-divider{width:60px;height:1px;background:var(--gold);margin:0 auto;}
-
 /* process */
-.process{padding:140px 48px;background:var(--grey);}
-.process-inner{max-width:1400px;margin:0 auto;}
 .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:64px;margin-top:80px;}
 .process-number{font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,168,76,.12);line-height:1;margin-bottom:24px;}
 .process-title{font-family:var(--serif);font-size:22px;font-weight:300;margin-bottom:16px;}
 .process-desc{font-size:13px;color:var(--mid);line-height:1.9;}
 
-/* sizes guide */
-.sizes{padding:140px 48px;max-width:1400px;margin:0 auto;}
+/* sizes */
 .size-guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:64px;}
 .size-guide-card{background:var(--grey);padding:40px 32px;border-bottom:2px solid transparent;transition:border-color .3s;}
 .size-guide-card:hover{border-color:var(--gold);}
@@ -167,14 +169,17 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);padding:18
 .size-guide-detail{font-size:12px;color:var(--mid);line-height:2;}
 
 /* livraison */
-.livraison{padding:140px 48px;background:var(--grey);}
-.livraison-inner{max-width:1400px;margin:0 auto;}
 .livraison-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:80px;}
 .livraison-card{background:var(--black);padding:40px 36px;}
 .livraison-icon{font-size:28px;margin-bottom:20px;display:block;}
 .livraison-title{font-family:var(--serif);font-size:22px;font-weight:300;margin-bottom:12px;}
 .livraison-desc{font-size:13px;color:var(--mid);line-height:1.9;}
 .livraison-highlight{color:var(--gold);font-size:13px;margin-top:8px;display:block;}
+
+/* section header shared */
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:80px;}
+.section-header-left .section-eyebrow{margin-bottom:16px;}
+.section-note{font-size:12px;color:var(--mid);letter-spacing:.1em;text-align:right;line-height:1.8;}
 
 /* footer */
 footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:80px 48px 40px;}
@@ -211,40 +216,41 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes glowPulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
 
 /* responsive */
 @media(max-width:900px){
   .cursor,.cursor-ring{display:none}body{cursor:auto}a,button{cursor:pointer}
   nav{padding:20px 24px}nav.scrolled{padding:14px 24px}
   .nav-links{display:none}.nav-hamburger{display:flex}.mobile-menu{display:flex}
-  .hero{padding:0 24px 72px;min-height:100svh}
-  .hero-title{font-size:clamp(52px,15vw,80px);margin-bottom:20px}
-  .hero-sub{font-size:12px;margin-bottom:36px}
-  .hero-actions{flex-direction:column;align-items:flex-start;gap:16px}
-  .btn-primary{width:100%;text-align:center;padding:18px 24px;font-size:11px}
-  .hero-scroll{display:none}
-  .collection{padding:80px 20px}.story{padding:80px 20px}.process{padding:80px 20px}.sizes{padding:80px 20px}.livraison{padding:80px 20px}footer{padding:60px 20px 32px}
+  .hero-logo-mark{font-size:clamp(80px,22vw,140px);}
+  .section-block{padding:80px 24px}
+  .figures-section{padding:0 24px 80px}
+  .figure-product-block{grid-template-columns:1fr;}
+  .figure-product-block.reverse{direction:ltr;}
+  .figure-text-side{padding:60px 24px !important;}
+  .figure-separator{margin:0 24px;}
   .product-grid{grid-template-columns:1fr;gap:2px}
-  .product-img-wrap{aspect-ratio:4/5}
+  .product-img-wrap{aspect-ratio:3/5;background:#f8f7f5;}
   .product-overlay{opacity:1;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 40%)}
   .product-buy-btn{transform:translateY(0);font-size:11px;padding:16px 28px}
   .product-info{padding:16px 20px 20px;flex-wrap:wrap}
   .product-name{font-size:20px}
-  .section-header{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:48px}
-  .section-title{font-size:clamp(28px,8vw,48px)}
-  .section-note{text-align:left;font-size:12px}
   .process-grid{grid-template-columns:1fr;gap:48px;margin-top:48px}.process-number{font-size:60px}
   .size-guide-grid{grid-template-columns:repeat(2,1fr);gap:2px;margin-top:40px}.size-guide-card{padding:28px 20px}.size-guide-name{font-size:36px}
   .livraison-grid{grid-template-columns:1fr;gap:2px}
-  .story-quote{font-size:clamp(22px,6vw,32px)}
+  .section-header{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:48px}
+  .section-note{text-align:left}
   .footer-top{grid-template-columns:1fr;gap:36px;margin-bottom:40px}.footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  footer{padding:60px 20px 32px}
   .cart-drawer{width:100vw;border-left:none}
   .marquee-track{gap:40px}.marquee-track span{font-size:9px}
   .product-card.tapped .product-img.front{opacity:0}.product-card.tapped .product-img.back{opacity:1}
   .popup-box{padding:40px 28px}.popup-form{flex-direction:column}
   .popup-input{border-right:1px solid rgba(255,255,255,.12);border-bottom:none}.popup-submit{padding:14px}
+  .figure-block{margin-bottom:56px;padding-bottom:56px}
 }
-@media(max-width:480px){.hero-title{font-size:clamp(44px,14vw,64px)}.nav-logo{font-size:18px}}
+@media(max-width:480px){.nav-logo{font-size:18px}}
 </style>
 </head>
 <body>
@@ -252,7 +258,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
 <div class="cursor"></div>
 <div class="cursor-ring"></div>
 
-<!-- NEWSLETTER POPUP -->
+<!-- POPUP NEWSLETTER -->
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
     <button class="popup-close" id="popupClose">×</button>
@@ -263,19 +269,17 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
       <input class="popup-input" type="email" placeholder="ton@email.com" id="popupEmail">
       <button class="popup-submit" id="popupSubmit">REJOINDRE</button>
     </div>
-    <div class="popup-success" id="popupSuccess">
-      <em>Bienvenue.</em>
-      Tu seras parmi les premiers à recevoir le lancement.
-    </div>
+    <div class="popup-success" id="popupSuccess"><em>Bienvenue.</em>Tu seras parmi les premiers à recevoir le lancement.</div>
     <p class="popup-note">Pas de spam. Un seul email au lancement.</p>
   </div>
 </div>
 
+<!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">V<span>Z</span>N</a>
   <ul class="nav-links">
-    <li><a href="#collection">Collection</a></li>
     <li><a href="#histoire">Histoire</a></li>
+    <li><a href="#collection">Collection</a></li>
     <li><a href="#livraison">Livraison</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -286,49 +290,81 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#collection" class="mobile-nav-link">Collection</a>
   <a href="#histoire" class="mobile-nav-link">Histoire</a>
+  <a href="#collection" class="mobile-nav-link">Collection</a>
   <a href="#livraison" class="mobile-nav-link">Livraison</a>
   <a href="#contact" class="mobile-nav-link">Contact</a>
   <span class="mobile-menu-footer">VZN · AETERNA · 2025</span>
 </div>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-marquee-bg" aria-hidden="true">AETERNA&nbsp;&nbsp;&nbsp;AETERNA&nbsp;&nbsp;&nbsp;AETERNA&nbsp;&nbsp;&nbsp;AETERNA&nbsp;&nbsp;&nbsp;</div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">AETERNA by VZN — Drop I</span>
-    <h1 class="hero-title">AET<em>ER</em>NA</h1>
-    <p class="hero-sub">Legends never die.<br>They become eternal.</p>
-    <div class="hero-actions">
-      <a href="#collection" class="btn-primary">Découvrir la collection</a>
-      <a href="#histoire" class="btn-ghost">Notre histoire</a>
-    </div>
+<!-- SECTION 1 — HERO LOGO -->
+<section class="hero-logo">
+  <div class="hero-logo-bg"></div>
+  <div class="hero-logo-glow" aria-hidden="true"></div>
+  <div class="hero-logo-content">
+    <div class="hero-logo-mark">V<span>Z</span>N</div>
+    <div class="hero-logo-sub">Broderie artisanale — Genolier, Suisse</div>
+    <div class="hero-logo-divider"></div>
   </div>
-  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
+  <div class="hero-logo-scroll" aria-hidden="true">
+    <span>Découvrir</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-section" aria-hidden="true">
   <div class="marquee-track">
     <span>BRODERIE ARTISANALE</span><span class="sep">✦</span><span>FABRIQUÉ EN SUISSE</span><span class="sep">✦</span><span>AETERNA COLLECTION</span><span class="sep">✦</span><span>STOCK LIMITÉ</span><span class="sep">✦</span><span>MYTHOLOGIE GRÉCO-ROMAINE</span><span class="sep">✦</span><span>LEGENDS NEVER DIE</span><span class="sep">✦</span><span>BRODERIE ARTISANALE</span><span class="sep">✦</span><span>FABRIQUÉ EN SUISSE</span><span class="sep">✦</span><span>AETERNA COLLECTION</span><span class="sep">✦</span><span>STOCK LIMITÉ</span><span class="sep">✦</span><span>MYTHOLOGIE GRÉCO-ROMAINE</span><span class="sep">✦</span><span>LEGENDS NEVER DIE</span><span class="sep">✦</span>
   </div>
 </div>
 
-<section class="collection" id="collection">
-  <div class="section-header reveal">
-    <div><span class="section-eyebrow">Collection</span><h2 class="section-title">AETERNA by VZN</h2></div>
-    <p class="section-note">4 pièces. Stock limité.<br>Broderie artisanale, Suisse.</p>
-  </div>
-  <div class="product-grid">
+<!-- SECTION 2 — NOTRE HISTOIRE -->
+<section class="section-block" id="histoire">
+  <span class="section-eyebrow reveal">Notre histoire</span>
+  <h2 class="section-title reveal">VZN</h2>
+  <p class="section-text reveal">Il y a des idées qui restent dans un carnet. Et il y a celles qui sortent de terre.</p>
+  <p class="section-text reveal">VZN est né en 2026 d'une conviction que beaucoup partagent mais que peu concrétisent : si tu veux porter quelque chose qui te ressemble vraiment, tu ne l'attends pas — tu le crées. Pas un logo emprunté. Pas un style dicté par quelqu'un d'autre. Une vision — brodée point par point, à la main, en Suisse — sur des pièces conçues pour traverser le temps.</p>
+  <p class="section-text reveal">Le nom VZN ne s'explique pas. Il se ressent. C'est la clarté de celui qui sait où il va avant même que le chemin existe. C'est voir ce que les autres ne voient pas encore — et avoir le courage de le construire quand même.</p>
+  <p class="section-text reveal">Ce projet est le premier à sortir de terre. Pas le dernier. Chaque pièce VZN est une prise de position. Contre le générique. Contre l'ordinaire. Pour quelque chose de vrai, de fait avec intention, de fait pour durer.</p>
+  <div class="section-divider reveal"></div>
+  <p class="section-quote reveal">"Ce n'est pas juste une marque. C'est un point de départ."</p>
+</section>
 
-    <!-- NIKE -->
+<!-- SECTION 3 — HISTOIRE COLLECTION -->
+<section class="dark-band">
+  <div class="section-block">
+    <span class="section-eyebrow reveal">Collection</span>
+    <h2 class="section-title reveal">AETERNA<em> by VZN</em></h2>
+    <p class="section-text reveal">AETERNA. Éternel, en latin.</p>
+    <p class="section-text reveal">Il y a plus de deux mille ans, des artisans grecs ont taillé dans la pierre des figures qui devaient traverser l'éternité. Ils ne savaient pas que des empires allaient s'effondrer, que des guerres allaient tout effacer, que des siècles d'oubli allaient passer.</p>
+    <p class="section-text reveal">Les figures, elles, sont restées.</p>
+    <p class="section-text reveal">AETERNA part de là. Quatre personnages que l'histoire a rendus immortels — pas parce qu'ils étaient parfaits, mais parce qu'ils incarnaient quelque chose de fondamental. La victoire. La démesure. Le pouvoir. L'injustice. Des forces aussi vivantes aujourd'hui qu'elles l'étaient dans l'Antiquité.</p>
+    <p class="section-text reveal">Chaque pièce est brodée à la main en Suisse. Point par point. Avec la même obsession du détail que ces artisans anonymes qui sculptaient sans savoir que leur travail durerait deux millénaires.</p>
+    <div class="section-divider reveal"></div>
+    <p class="section-quote reveal">"Parce que ce qui est fait avec intention ne disparaît pas."</p>
+  </div>
+</section>
+
+<!-- SECTION 4 — FIGURES + PRODUITS -->
+<section id="collection">
+
+  <!-- NIKE -->
+  <div class="figure-product-block">
+    <div class="figure-text-side section-block reveal">
+      <div class="figure-name">NIKE<em> —</em></div>
+      <span class="figure-subtitle">La Victoire ailée</span>
+      <p class="figure-text">Déesse personnifiée de la victoire, Nike planait au-dessus des champs de bataille grecs pour couronner les vainqueurs. Fille de Styx et de Pallas, elle accompagnait Zeus et Athéna au combat — toujours en mouvement, ailes déployées, parce que la victoire par nature ne s'arrête jamais.</p>
+      <p class="figure-text">Sa sculpture la plus célèbre, la Victoire de Samothrace, est sans tête et sans bras. Mutilée par le temps. Et pourtant, deux mille ans plus tard, c'est l'une des œuvres les plus puissantes du monde.</p>
+      <p class="figure-quote">Certaines victoires n'ont pas besoin d'un visage pour être éternelles.</p>
+    </div>
     <div class="product-card reveal" data-product="nike" data-color="noir">
       <div class="product-img-wrap">
         <img src="nike-avant-noir.png" alt="NIKE — AETERNA avant" class="product-img front" loading="lazy">
         <img src="nike-dos-noir.png" alt="NIKE — AETERNA dos" class="product-img back" loading="lazy">
         <div class="product-overlay"><button class="product-buy-btn" data-product="nike">Ajouter au panier</button></div>
         <span class="product-tag">AETERNA</span>
-        <span class="stock-badge low">Stock limité</span>
+        <span class="stock-badge">Stock limité</span>
       </div>
       <div class="product-info">
         <div class="product-info-left">
@@ -349,15 +385,26 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
         <div class="product-right"><div class="product-price">CHF 89</div></div>
       </div>
     </div>
+  </div>
 
-    <!-- ICARUS -->
+  <div class="figure-separator"></div>
+
+  <!-- ICARUS -->
+  <div class="figure-product-block reverse">
+    <div class="figure-text-side section-block reveal">
+      <div class="figure-name">ICARUS<em> —</em></div>
+      <span class="figure-subtitle">L'homme qui a touché le soleil</span>
+      <p class="figure-text">Fils de l'architecte Dédale, Icare s'échappa de Crète avec des ailes de plumes et de cire. Son père l'avertit : ne vole ni trop bas — la mer humidifiera tes ailes — ni trop haut — le soleil les fera fondre. Dans l'ivresse du vol, Icare monta vers le soleil. La cire fondit. Il tomba dans la mer qui porte aujourd'hui son nom.</p>
+      <p class="figure-text">Son histoire n'est pas celle d'un échec. C'est celle de l'hybris — cette démesure qui pousse l'homme à dépasser ses limites au mépris de tout avertissement. Un rappel que personne ne devrait chercher à s'élever au détriment des autres.</p>
+      <p class="figure-quote">L'ambition sans sagesse ne mène pas vers les étoiles.</p>
+    </div>
     <div class="product-card reveal" data-product="icare" data-color="noir">
       <div class="product-img-wrap">
         <img src="icare-avant-noir.png" alt="ICARUS — AETERNA avant" class="product-img front" loading="lazy">
         <img src="icare-dos-noir.png" alt="ICARUS — AETERNA dos" class="product-img back" loading="lazy">
         <div class="product-overlay"><button class="product-buy-btn" data-product="icare">Ajouter au panier</button></div>
         <span class="product-tag">AETERNA</span>
-        <span class="stock-badge low">Stock limité</span>
+        <span class="stock-badge">Stock limité</span>
       </div>
       <div class="product-info">
         <div class="product-info-left">
@@ -378,15 +425,26 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
         <div class="product-right"><div class="product-price">CHF 89</div></div>
       </div>
     </div>
+  </div>
 
-    <!-- ZEUS -->
+  <div class="figure-separator"></div>
+
+  <!-- ZEUS -->
+  <div class="figure-product-block">
+    <div class="figure-text-side section-block reveal">
+      <div class="figure-name">ZEUS<em> —</em></div>
+      <span class="figure-subtitle">Le Père des dieux</span>
+      <p class="figure-text">Roi de l'Olympe, dieu du ciel et de la foudre. Fils de Cronos qui dévorait ses enfants par peur d'être détrôné, Zeus survécut, renversa son père et divisa le monde entre les dieux. Son arme — la foudre — n'était pas juste un symbole de puissance. C'était l'expression d'une autorité absolue.</p>
+      <p class="figure-text">Zeus ne cherchait pas à convaincre. Il tranchait. Et le monde obéissait. Certaines présences n'ont pas besoin de crier pour remplir la pièce.</p>
+      <p class="figure-quote">Avant lui, la tempête n'avait pas de nom.</p>
+    </div>
     <div class="product-card reveal" data-product="zeus" data-color="noir">
       <div class="product-img-wrap">
         <img src="zeus-avant-noir.png" alt="ZEUS — AETERNA avant" class="product-img front" loading="lazy">
         <img src="zeus-dos-noir.png" alt="ZEUS — AETERNA dos" class="product-img back" loading="lazy">
         <div class="product-overlay"><button class="product-buy-btn" data-product="zeus">Ajouter au panier</button></div>
         <span class="product-tag">AETERNA</span>
-        <span class="stock-badge low">Stock limité</span>
+        <span class="stock-badge">Stock limité</span>
       </div>
       <div class="product-info">
         <div class="product-info-left">
@@ -407,15 +465,26 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
         <div class="product-right"><div class="product-price">CHF 89</div></div>
       </div>
     </div>
+  </div>
 
-    <!-- MEDUSA -->
+  <div class="figure-separator"></div>
+
+  <!-- MEDUSA -->
+  <div class="figure-product-block reverse">
+    <div class="figure-text-side section-block reveal">
+      <div class="figure-name">MEDUSA<em> —</em></div>
+      <span class="figure-subtitle">La mal-aimée</span>
+      <p class="figure-text">Méduse n'est pas née monstre. Prêtresse du temple d'Athéna, d'une beauté extraordinaire, elle fut agressée par Poséidon dans ce lieu sacré. Athéna, au lieu de punir Poséidon, punit Méduse — transformant ses cheveux en serpents, la rendant si terrifiante que quiconque la regardait était pétrifié sur place.</p>
+      <p class="figure-text">Exilée, traquée, décapitée par Persée qui utilisa sa tête comme arme. Elle est devenue le symbole universel du monstre. Son seul crime fut d'être belle dans un monde où les puissants n'avaient pas à rendre de comptes.</p>
+      <p class="figure-quote">AETERNA lui redonne son visage.</p>
+    </div>
     <div class="product-card reveal" data-product="meduse" data-color="noir">
       <div class="product-img-wrap">
         <img src="meduse-avant-noir.png" alt="MEDUSA — AETERNA avant" class="product-img front" loading="lazy">
         <img src="meduse-dos-noir.png" alt="MEDUSA — AETERNA dos" class="product-img back" loading="lazy">
         <div class="product-overlay"><button class="product-buy-btn" data-product="meduse">Ajouter au panier</button></div>
         <span class="product-tag">AETERNA</span>
-        <span class="stock-badge low">Stock limité</span>
+        <span class="stock-badge">Stock limité</span>
       </div>
       <div class="product-info">
         <div class="product-info-left">
@@ -436,34 +505,35 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
         <div class="product-right"><div class="product-price">CHF 89</div></div>
       </div>
     </div>
-
   </div>
+
 </section>
 
-<section class="story" id="histoire">
-  <span class="story-eyebrow reveal">Notre histoire</span>
-  <blockquote class="story-quote reveal">"Il y a plus de 2000 ans, des artisans ont taillé dans la pierre des figures qui défient le temps."</blockquote>
-  <p class="story-text reveal">Ces figures ont traversé des empires, des guerres, des siècles d'oubli. Taillées dans la pierre, gravées dans la mémoire collective. AETERNA les brode point par point sur des pièces conçues pour durer.</p>
-  <div class="story-divider reveal"></div>
-</section>
-
-<section class="process" id="process">
-  <div class="process-inner">
+<!-- SECTION 6 — PROCESS -->
+<section class="dark-band">
+  <div class="section-block wide">
     <div class="section-header reveal">
-      <div><span class="section-eyebrow">Fabrication</span><h2 class="section-title">Le process</h2></div>
+      <div class="section-header-left">
+        <span class="section-eyebrow">Fabrication</span>
+        <h2 class="section-title">Le process</h2>
+      </div>
       <p class="section-note">Chaque pièce est unique.<br>Chaque point est intentionnel.</p>
     </div>
     <div class="process-grid">
-      <div class="process-item reveal"><div class="process-number">01</div><h3 class="process-title">Le design</h3><p class="process-desc">Chaque motif est digitalisé et optimisé pour la broderie. Les détails sont travaillés point par point pour garantir un rendu net et durable.</p></div>
-      <div class="process-item reveal"><div class="process-number">02</div><h3 class="process-title">La broderie</h3><p class="process-desc">Réalisée artisanalement en Suisse sur machine professionnelle. Le fil est sélectionné pour chaque accent couleur — chaque pièce prend plusieurs heures.</p></div>
-      <div class="process-item reveal"><div class="process-number">03</div><h3 class="process-title">Le contrôle</h3><p class="process-desc">Chaque hoodie est inspecté individuellement avant expédition. Les légères variations font partie de l'authenticité artisanale de la pièce.</p></div>
+      <div class="reveal"><div class="process-number">01</div><h3 class="process-title">Le design</h3><p class="process-desc">Chaque motif est digitalisé et optimisé pour la broderie. Les détails sont travaillés point par point pour garantir un rendu net et durable.</p></div>
+      <div class="reveal"><div class="process-number">02</div><h3 class="process-title">La broderie</h3><p class="process-desc">Réalisée artisanalement en Suisse sur machine professionnelle. Le fil est sélectionné pour chaque accent couleur — chaque pièce prend plusieurs heures.</p></div>
+      <div class="reveal"><div class="process-number">03</div><h3 class="process-title">Le contrôle</h3><p class="process-desc">Chaque hoodie est inspecté individuellement avant expédition. Les légères variations font partie de l'authenticité artisanale de la pièce.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sizes">
+<!-- SECTION 7 — TAILLES -->
+<section class="section-block wide">
   <div class="section-header reveal">
-    <div><span class="section-eyebrow">Guide</span><h2 class="section-title">Tailles</h2></div>
+    <div class="section-header-left">
+      <span class="section-eyebrow">Guide</span>
+      <h2 class="section-title">Tailles</h2>
+    </div>
     <p class="section-note">Coupe unisexe oversize.<br>En cas de doute, prends ta taille habituelle.</p>
   </div>
   <div class="size-guide-grid">
@@ -474,42 +544,28 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
   </div>
 </section>
 
-<!-- LIVRAISON & RETOURS -->
-<section class="livraison" id="livraison">
-  <div class="livraison-inner">
+<!-- SECTION 8 — LIVRAISON -->
+<section class="dark-band" id="livraison">
+  <div class="section-block wide">
     <div class="section-header reveal">
-      <div><span class="section-eyebrow">Info</span><h2 class="section-title">Livraison & Retours</h2></div>
+      <div class="section-header-left">
+        <span class="section-eyebrow">Info</span>
+        <h2 class="section-title">Livraison & Retours</h2>
+      </div>
       <p class="section-note">Simple. Transparent.<br>Sans surprise.</p>
     </div>
     <div class="livraison-grid">
-      <div class="livraison-card reveal">
-        <span class="livraison-icon">📦</span>
-        <h3 class="livraison-title">Livraison Suisse</h3>
-        <p class="livraison-desc">Expédition via Swiss Post dans les 3–5 jours ouvrables après confirmation de la commande. Chaque pièce est emballée individuellement avec soin.</p>
-        <span class="livraison-highlight">CHF 7.00 — Suisse uniquement au lancement</span>
-      </div>
-      <div class="livraison-card reveal">
-        <span class="livraison-icon">🔄</span>
-        <h3 class="livraison-title">Retours</h3>
-        <p class="livraison-desc">Tu as 14 jours pour retourner une pièce non portée, dans son emballage d'origine. Contacte-nous par email avant de retourner l'article.</p>
-        <span class="livraison-highlight">girardetromain@gmail.com</span>
-      </div>
-      <div class="livraison-card reveal">
-        <span class="livraison-icon">✦</span>
-        <h3 class="livraison-title">Artisanal & Unique</h3>
-        <p class="livraison-desc">Chaque broderie est réalisée à la main en Suisse. De légères variations de tension ou de position font partie de l'authenticité de chaque pièce — elles ne constituent pas un défaut.</p>
-        <span class="livraison-highlight">Fabriqué à Genolier, Suisse</span>
-      </div>
+      <div class="livraison-card reveal"><span class="livraison-icon">📦</span><h3 class="livraison-title">Livraison Suisse</h3><p class="livraison-desc">Expédition via Swiss Post dans les 3–5 jours ouvrables après confirmation de la commande. Chaque pièce est emballée individuellement avec soin.</p><span class="livraison-highlight">CHF 7.00 — Suisse uniquement au lancement</span></div>
+      <div class="livraison-card reveal"><span class="livraison-icon">🔄</span><h3 class="livraison-title">Retours</h3><p class="livraison-desc">Tu as 14 jours pour retourner une pièce non portée, dans son emballage d'origine. Contacte-nous par email avant de retourner l'article.</p><span class="livraison-highlight">girardetromain@gmail.com</span></div>
+      <div class="livraison-card reveal"><span class="livraison-icon">✦</span><h3 class="livraison-title">Artisanal & Unique</h3><p class="livraison-desc">Chaque broderie est réalisée à la main en Suisse. De légères variations font partie de l'authenticité de chaque pièce — elles ne constituent pas un défaut.</p><span class="livraison-highlight">Fabriqué à Genolier, Suisse</span></div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
   <div class="footer-top">
-    <div>
-      <div class="footer-brand">VZN</div>
-      <p class="footer-tagline">Legends never die.<br>They become eternal.</p>
-    </div>
+    <div><div class="footer-brand">VZN</div><p class="footer-tagline">Legends never die.<br>They become eternal.</p></div>
     <div>
       <span class="footer-col-title">Collection</span>
       <ul class="footer-links">
@@ -524,7 +580,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
       <span class="footer-col-title">Info</span>
       <ul class="footer-links">
         <li><a href="#histoire">Histoire</a></li>
-        <li><a href="#process">Process</a></li>
+        <li><a href="#collection">Collection</a></li>
         <li><a href="#livraison">Livraison</a></li>
         <li><a href="#livraison">Retours</a></li>
       </ul>
@@ -539,7 +595,7 @@ footer{background:var(--grey);border-top:1px solid rgba(201,168,76,.12);padding:
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 VZN — Genolier, Suisse</span>
+    <span class="footer-copy">© 2026 VZN — Genolier, Suisse</span>
     <span class="footer-copy">vzn-official.com</span>
   </div>
 </footer>
@@ -566,7 +622,7 @@ const nav=document.querySelector('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
 
 // reveal
-const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.12});
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
 // cart
@@ -583,50 +639,41 @@ const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElem
 hamburger&&hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';});
 document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',()=>{hamburger.classList.remove('open');mobileMenu.classList.remove('open');document.body.style.overflow='';}));
 
-// newsletter popup — apparaît après 4 secondes
+// popup
 const popup=document.getElementById('popup'),popupClose=document.getElementById('popupClose');
-const popupSeen=sessionStorage.getItem('vzn-popup');
-if(!popupSeen) setTimeout(()=>{popup.classList.add('open');document.body.style.overflow='hidden';},4000);
+if(!sessionStorage.getItem('vzn-popup'))setTimeout(()=>{popup.classList.add('open');document.body.style.overflow='hidden';},4000);
 function closePopup(){popup.classList.remove('open');document.body.style.overflow='';sessionStorage.setItem('vzn-popup','1');}
 popupClose&&popupClose.addEventListener('click',closePopup);
 popup&&popup.addEventListener('click',e=>{if(e.target===popup)closePopup();});
 document.getElementById('popupSubmit')&&document.getElementById('popupSubmit').addEventListener('click',()=>{
   const email=document.getElementById('popupEmail').value;
-  if(!email||!email.includes('@')) return;
+  if(!email||!email.includes('@'))return;
   document.getElementById('popupForm').style.display='none';
   document.getElementById('popupSuccess').style.display='block';
   setTimeout(closePopup,3000);
 });
 
-// color + size selector
+// color + size
 document.querySelectorAll('.product-card').forEach(card=>{
   const product=card.dataset.product;
   const front=card.querySelector('.product-img.front'),back=card.querySelector('.product-img.back');
   const label=card.querySelector('.color-label');
-  const colorBtns=card.querySelectorAll('.color-btn');
-  const sizeBtns=card.querySelectorAll('.size-btn');
-
-  colorBtns.forEach(btn=>btn.addEventListener('click',e=>{
+  card.querySelectorAll('.color-btn').forEach(btn=>btn.addEventListener('click',e=>{
     e.stopPropagation();
     const color=btn.dataset.color;
     card.dataset.color=color;
-    colorBtns.forEach(b=>b.classList.remove('active'));
+    card.querySelectorAll('.color-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     label.textContent=color.toUpperCase();
     front.src=`${product}-avant-${color}.png`;
     back.src=`${product}-dos-${color}.png`;
   }));
-
-  sizeBtns.forEach(btn=>btn.addEventListener('click',e=>{
+  card.querySelectorAll('.size-btn').forEach(btn=>btn.addEventListener('click',e=>{
     e.stopPropagation();
-    sizeBtns.forEach(b=>b.classList.remove('active'));
+    card.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    card.dataset.size=btn.dataset.size;
   }));
-
-  card.addEventListener('click',e=>{
-    if(window.innerWidth<=900&&!e.target.closest('button'))card.classList.toggle('tapped');
-  });
+  card.addEventListener('click',e=>{if(window.innerWidth<=900&&!e.target.closest('button'))card.classList.toggle('tapped');});
 });
 
 // Shopify
