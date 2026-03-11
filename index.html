@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VZN — AETERNA</title>
+<meta name="description" content="Quelque chose arrive. 15.04.2026.">
+<meta property="og:title" content="VZN — AETERNA">
+<meta property="og:description" content="Quelque chose arrive.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--gold:#C9A84C;--black:#0a0a0a;--white:#f5f4f0;--mid:rgba(255,255,255,.35);--sans:'Helvetica Neue',Arial,sans-serif;--serif:Georgia,'Times New Roman',serif;}
+html,body{height:100%;}
+body{background:var(--black);color:var(--white);font-family:var(--sans);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.bg-glow{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,168,76,.05) 0%,transparent 70%);pointer-events:none;animation:glowPulse 6s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{opacity:.6;}50%{opacity:1;}}
+.content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 24px;}
+.logo{font-family:var(--serif);font-size:clamp(64px,12vw,140px);font-weight:300;letter-spacing:.15em;line-height:1;opacity:0;animation:fadeUp 1.2s ease .3s forwards;}
+.logo span{color:var(--gold);}
+.divider{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold),transparent);margin:36px auto;opacity:0;animation:fadeIn 1s ease 1s forwards;}
+.eyebrow{font-size:9px;letter-spacing:.6em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease 1.2s forwards;}
+.tagline{font-family:var(--serif);font-size:clamp(16px,2.5vw,24px);font-weight:300;font-style:italic;color:var(--mid);line-height:1.7;margin-bottom:48px;opacity:0;animation:fadeUp .8s ease 1.4s forwards;}
+.countdown-wrap{display:flex;gap:32px;align-items:flex-start;justify-content:center;margin-bottom:48px;opacity:0;animation:fadeUp .8s ease 1.6s forwards;}
+.countdown-block{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.countdown-num{font-family:var(--serif);font-size:clamp(40px,6vw,72px);font-weight:300;line-height:1;color:var(--white);min-width:2ch;text-align:center;}
+.countdown-label{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);}
+.countdown-sep{font-family:var(--serif);font-size:clamp(32px,5vw,56px);color:rgba(201,168,76,.25);line-height:1;padding-top:4px;}
+.date-line{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:48px;opacity:0;animation:fadeIn 1s ease 1.8s forwards;}
+.date-line span{color:var(--gold);}
+.newsletter{display:flex;gap:0;width:100%;max-width:420px;opacity:0;animation:fadeUp .8s ease 2s forwards;}
+.newsletter input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-right:none;color:var(--white);font-family:var(--sans);font-size:12px;padding:16px 20px;outline:none;transition:border-color .3s;}
+.newsletter input::placeholder{color:rgba(255,255,255,.2);}
+.newsletter input:focus{border-color:var(--gold);}
+.newsletter button{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:16px 24px;border:none;cursor:pointer;transition:background .3s;white-space:nowrap;}
+.newsletter button:hover{background:var(--white);}
+.newsletter-success{display:none;font-size:12px;color:var(--gold);letter-spacing:.15em;margin-top:16px;}
+.socials{display:flex;gap:24px;margin-top:40px;opacity:0;animation:fadeIn 1s ease 2.2s forwards;}
+.socials a{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s;}
+.socials a:hover{color:var(--gold);}
+.note{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.1);white-space:nowrap;opacity:0;animation:fadeIn 1s ease 2.4s forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@media(max-width:600px){.countdown-wrap{gap:16px;}.countdown-sep{display:none;}.newsletter{flex-direction:column;}.newsletter input{border-right:1px solid rgba(255,255,255,.08);border-bottom:none;}.newsletter button{padding:14px;}}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="content">
+  <div class="logo">V<span>Z</span>N</div>
+  <div class="divider"></div>
+  <span class="eyebrow">AETERNA by VZN — Drop I</span>
+  <p class="tagline">Legends never die.<br>They become eternal.</p>
+  <div class="countdown-wrap">
+    <div class="countdown-block"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Jours</span></div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Heures</span></div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Minutes</span></div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secondes</span></div>
+  </div>
+  <p class="date-line">Précommande ouverte le <span>15 avril 2026</span></p>
+  <div style="width:100%;max-width:420px;">
+    <div class="newsletter" id="newsletterForm">
+      <input type="email" id="waitEmail" placeholder="ton@email.com">
+      <button onclick="joinWaitlist()">Rejoindre</button>
+    </div>
+    <div class="newsletter-success" id="waitSuccess">✦ &nbsp;Tu seras parmi les premiers à savoir.</div>
+    <div class="newsletter-success" id="waitError" style="color:rgba(255,255,255,.4);">Une erreur est survenue. Réessaie.</div>
+  </div>
+  <div class="socials">
+    <a href="https://www.tiktok.com/@vizionembroidery" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/vizion_embroidery" target="_blank">Instagram</a>
+  </div>
+</div>
+<span class="note">vzn-official.com &nbsp;·&nbsp; Brodé à la main en Suisse</span>
+<script>
+var target = new Date('2026-04-15T00:00:00').getTime();
+function updateCountdown(){
+  var diff = target - Date.now();
+  if(diff<=0){['days','hours','mins','secs'].forEach(function(id){document.getElementById('cd-'+id).textContent='00';});return;}
+  document.getElementById('cd-days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+function joinWaitlist(){
+  var email = document.getElementById('waitEmail').value.trim();
+  if(!email || !email.includes('@')) return;
+  var btn = document.querySelector('#newsletterForm button');
+  btn.textContent = '...';
+  btn.disabled = true;
+  // Mailchimp JSONP — pas de redirection
+  var url = 'https://vzn-official.us20.list-manage.com/subscribe/post-json?u=100ec78929f6a2a7d1bf62802&id=647dc7d539&f_id=005220eef0&EMAIL=' + encodeURIComponent(email) + '&c=mailchimpCallback';
+  var script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+  // Timeout fallback
+  setTimeout(function(){
+    if(document.getElementById('newsletterForm').style.display !== 'none'){
+      document.getElementById('newsletterForm').style.display = 'none';
+      document.getElementById('waitSuccess').style.display = 'block';
+    }
+  }, 4000);
+}
+function mailchimpCallback(data){
+  document.getElementById('newsletterForm').style.display = 'none';
+  if(data.result === 'success' || data.result === 'error' && data.msg.includes('already subscribed')){
+    document.getElementById('waitSuccess').style.display = 'block';
+  } else {
+    document.getElementById('waitError').style.display = 'block';
+    setTimeout(function(){
+      document.getElementById('waitError').style.display = 'none';
+      var btn = document.querySelector('#newsletterForm button');
+      btn.textContent = 'Rejoindre'; btn.disabled = false;
+      document.getElementById('newsletterForm').style.display = 'flex';
+    }, 3000);
+  }
+}
+</script>
+</body>
+</html>
