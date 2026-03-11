@@ -672,12 +672,12 @@ document.querySelectorAll('.product-card').forEach(card=>{
 });
 
 // Shopify
-const SHOPIFY_DOMAIN='YOUR-STORE.myshopify.com';
-const SHOPIFY_TOKEN='YOUR-STOREFRONT-TOKEN';
-const PRODUCTS={nike:'YOUR-NIKE-ID',icare:'YOUR-ICARE-ID',zeus:'YOUR-ZEUS-ID',meduse:'YOUR-MEDUSE-ID'};
+const SHOPIFY_DOMAIN='xs0pji-jf.myshopify.com';
+const SHOPIFY_TOKEN='5544c0d15c824acbb76dd0928a6f1056';
+const PRODUCTS={nike:'15580501475659',icare:'15580500656459',zeus:'15580499509579',meduse:'15580499280203'};
 function loadSDK(){return new Promise(r=>{if(window.ShopifyBuy){r();return;}const s=document.createElement('script');s.src='https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';s.onload=r;document.head.appendChild(s);});}
 async function initShopify(key,cid){
-  if(SHOPIFY_DOMAIN==='YOUR-STORE.myshopify.com'){document.getElementById(cid).innerHTML='<p style="color:rgba(255,255,255,.3);font-size:12px;text-align:center;padding:20px 0;">Shopify Buy Button — à configurer</p>';return;}
+  if(SHOPIFY_DOMAIN==='xs0pji-jf.myshopify.com'){document.getElementById(cid).innerHTML='<p style="color:rgba(255,255,255,.3);font-size:12px;text-align:center;padding:20px 0;">Shopify Buy Button — à configurer</p>';return;}
   await loadSDK();
   const client=ShopifyBuy.buildClient({domain:SHOPIFY_DOMAIN,storefrontAccessToken:SHOPIFY_TOKEN});
   ShopifyBuy.UI.init(client).createComponent('product',{id:PRODUCTS[key],node:document.getElementById(cid),moneyFormat:'CHF %7B%7Bamount%7D%7D',options:{product:{styles:{button:{'font-family':'Karla,sans-serif','font-size':'10px','letter-spacing':'0.3em','text-transform':'uppercase','font-weight':'600','padding-top':'16px','padding-bottom':'16px','background-color':'#C9A84C','color':'#0a0a0a',':hover':{'background-color':'#f4f2ee'},'border-radius':'0','width':'100%'},title:{'font-family':'Cormorant Garamond,serif','font-size':'22px','font-weight':'300','color':'#f4f2ee'},price:{'font-family':'Cormorant Garamond,serif','font-size':'20px','color':'#C9A84C'}},text:{button:'Ajouter au panier'},layout:'vertical',contents:{img:false,title:true,price:true}},cart:{styles:{button:{'font-family':'Karla,sans-serif','font-size':'10px','letter-spacing':'0.3em','text-transform':'uppercase','font-weight':'600','background-color':'#C9A84C','color':'#0a0a0a',':hover':{'background-color':'#f4f2ee'},'border-radius':'0','width':'100%'}},text:{total:'Total',button:'Commander — Checkout'}}}});
