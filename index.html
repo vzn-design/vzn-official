@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — VZN | Mythologie, broderie et culture</title>
+  <meta name="description" content="Explorez les histoires derrière la collection AETERNA by VZN — mythologie grecque, broderie artisanale, et culture streetwear premium.">
+  <meta property="og:title" content="Blog VZN — Mythologie et broderie artisanale">
+  <meta property="og:description" content="Les histoires derrière la collection AETERNA by VZN.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0A0A0A;
+  --white:#FAFAF8;
+  --stone:#F0EDE6;
+  --stone2:#E8E4DC;
+  --gold:#C9A84C;
+  --mid:rgba(10,10,10,0.45);
+  --mid2:rgba(10,10,10,0.25);
+  --serif:'Cormorant Garamond',serif;
+  --display:'Cinzel',serif;
+  --sans:'Karla',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+
+.top-accent{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:300;opacity:.6;}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;transition:background .4s,padding .4s;}
+nav.scrolled{background:rgba(250,250,248,.95);backdrop-filter:blur(20px);padding:18px 48px;border-bottom:1px solid rgba(10,10,10,.08);}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:48px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--black);}
+.nav-right a{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-right a:hover{color:var(--black);}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}}
+
+/* hero */
+.blog-hero{padding:180px 48px 80px;max-width:900px;margin:0 auto;border-bottom:1px solid rgba(10,10,10,.08);}
+.blog-hero-eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:24px;}
+.blog-hero-title{font-family:var(--serif);font-size:clamp(48px,7vw,96px);font-weight:300;line-height:.95;margin-bottom:32px;}
+.blog-hero-title em{font-style:italic;color:var(--gold);}
+.blog-hero-sub{font-size:14px;color:var(--mid);line-height:2;max-width:560px;}
+@media(max-width:600px){.blog-hero{padding:140px 24px 60px;}}
+
+/* articles grid */
+.articles-section{padding:80px 48px 140px;max-width:1200px;margin:0 auto;}
+.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+.article-card{background:var(--stone);display:flex;flex-direction:column;transition:background .3s;}
+.article-card:hover{background:var(--stone2);}
+.article-card-image{aspect-ratio:16/9;background:var(--stone2);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.article-card-letter{font-family:var(--display);font-size:120px;font-weight:600;color:rgba(10,10,10,.06);letter-spacing:.05em;user-select:none;}
+.article-card-gold-line{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);}
+.article-card-body{padding:36px 36px 40px;flex:1;display:flex;flex-direction:column;}
+.article-card-tag{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+.article-card-title{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.15;margin-bottom:16px;color:var(--black);}
+.article-card-excerpt{font-size:13px;color:var(--mid);line-height:1.9;flex:1;margin-bottom:28px;}
+.article-card-link{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--black);transition:color .3s;}
+.article-card-link:hover{color:var(--gold);}
+.article-card-link::after{content:'→';font-size:14px;transition:transform .3s;}
+.article-card:hover .article-card-link::after{transform:translateX(4px);}
+
+/* featured article */
+.article-card.featured{grid-column:span 2;flex-direction:row;}
+.article-card.featured .article-card-image{flex:1;aspect-ratio:unset;min-height:320px;}
+.article-card.featured .article-card-body{flex:1;padding:56px 56px;}
+.article-card.featured .article-card-title{font-size:clamp(28px,3.5vw,48px);}
+
+@media(max-width:900px){
+  .articles-section{padding:60px 24px 100px;}
+  .articles-grid{grid-template-columns:1fr;}
+  .article-card.featured{flex-direction:column;}
+  .article-card.featured .article-card-image{min-height:200px;}
+  .article-card.featured .article-card-body{padding:36px 28px;}
+}
+
+/* footer */
+footer{background:var(--black);padding:60px 48px 40px;border-top:1px solid rgba(201,168,76,.12);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;}
+.footer-links-row{display:flex;gap:32px;}
+.footer-links-row a{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;transition:color .3s;}
+.footer-links-row a:hover{color:var(--gold);}
+@media(max-width:600px){footer{padding:40px 24px 32px;}.footer-bottom{flex-direction:column;gap:16px;text-align:center;}.footer-links-row{flex-wrap:wrap;justify-content:center;}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<nav id="mainNav">
+  <div class="nav-logo"><a href="/"><img src="/vzn-logo-black.png" alt="VZN"></a></div>
+  <ul class="nav-links">
+    <li><a href="/#histoire">Histoire</a></li>
+    <li><a href="/#collection">Collection</a></li>
+    <li><a href="/blog" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right"><a href="/">← Retour au site</a></div>
+</nav>
+
+<header class="blog-hero">
+  <span class="blog-hero-eyebrow">VZN — Récits</span>
+  <h1 class="blog-hero-title">Mythologie.<br><em>Artisanat.</em><br>Éternité.</h1>
+  <p class="blog-hero-sub">Les histoires derrière la collection AETERNA — figures mythologiques, broderie artisanale et culture du vêtement premium.</p>
+</header>
+
+<section class="articles-section">
+  <div class="articles-grid">
+
+    <!-- FEATURED — NIKE -->
+    <a href="/blog/nike-victoire-samothrace" class="article-card featured reveal">
+      <div class="article-card-image">
+        <div class="article-card-letter">N</div>
+        <div class="article-card-gold-line"></div>
+      </div>
+      <div class="article-card-body">
+        <span class="article-card-tag">Mythologie grecque</span>
+        <h2 class="article-card-title">La Victoire de Samothrace : histoire et signification</h2>
+        <p class="article-card-excerpt">Sans tête. Sans bras. Et pourtant l'une des sculptures les plus puissantes jamais créées. L'histoire de Nike, déesse de la victoire, et de la sculpture qui a traversé deux mille ans d'histoire pour arriver jusqu'à nous.</p>
+        <span class="article-card-link">Lire l'article</span>
+      </div>
+    </a>
+
+    <!-- ICARE -->
+    <a href="/blog/icare-mythe-ambition" class="article-card reveal">
+      <div class="article-card-image">
+        <div class="article-card-letter">I</div>
+        <div class="article-card-gold-line"></div>
+      </div>
+      <div class="article-card-body">
+        <span class="article-card-tag">Mythologie grecque</span>
+        <h2 class="article-card-title">Icare et la chute du soleil : le mythe qui définit l'ambition humaine</h2>
+        <p class="article-card-excerpt">Il savait exactement ce qui allait arriver. Et il a continué à monter quand même. L'histoire d'Icare n'est pas celle d'un échec — c'est celle du choix.</p>
+        <span class="article-card-link">Lire l'article</span>
+      </div>
+    </a>
+
+    <!-- ZEUS -->
+    <a href="/blog/zeus-dieu-foudre" class="article-card reveal">
+      <div class="article-card-image">
+        <div class="article-card-letter">Z</div>
+        <div class="article-card-gold-line"></div>
+      </div>
+      <div class="article-card-body">
+        <span class="article-card-tag">Mythologie grecque</span>
+        <h2 class="article-card-title">Zeus : le dieu de la foudre qui a défini le pouvoir absolu</h2>
+        <p class="article-card-excerpt">Fils d'un père qui dévorait ses enfants. Vainqueur d'une guerre de dix ans contre les Titans. Maître du ciel et de la foudre. L'histoire de Zeus est celle de la puissance sans compromis.</p>
+        <span class="article-card-link">Lire l'article</span>
+      </div>
+    </a>
+
+    <!-- MEDUSA -->
+    <a href="/blog/meduse-histoire-vraie" class="article-card reveal">
+      <div class="article-card-image">
+        <div class="article-card-letter">M</div>
+        <div class="article-card-gold-line"></div>
+      </div>
+      <div class="article-card-body">
+        <span class="article-card-tag">Mythologie grecque</span>
+        <h2 class="article-card-title">Méduse : l'histoire vraie du monstre qui n'en était pas un</h2>
+        <p class="article-card-excerpt">Elle n'est pas née monstre. Elle était prêtresse, belle, innocente. Ce qu'on lui a fait et la façon dont on l'a punie pour ça est l'une des injustices les plus frappantes de toute la mythologie grecque.</p>
+        <span class="article-card-link">Lire l'article</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 VZN — Genolier, Suisse</span>
+    <div class="footer-links-row">
+      <a href="/">Site</a>
+      <a href="/#collection">Collection</a>
+      <a href="https://www.instagram.com/vizion_clothes" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@vizion.official" target="_blank">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
