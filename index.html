@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VZN — AETERNA</title>
+<meta name="description" content="Quelque chose arrive. 15.04.2026.">
+<meta property="og:title" content="VZN — AETERNA">
+<meta property="og:description" content="Quelque chose arrive.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;600&family=GFS+Didot&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#C9A84C;
+  --black:#0a0a0a;
+  --white:#FAFAF8;
+  --stone:#F0EDE6;
+  --mid:rgba(10,10,10,.35);
+  --sans:'Helvetica Neue',Arial,sans-serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --display:'GFS Didot','Cinzel',serif;
+}
+html,body{height:100%;}
+body{
+  background:var(--white);
+  color:var(--black);
+  font-family:var(--sans);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Grain subtil */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:100;
+  opacity:0.4;
+}
+
+.content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:40px 24px;
+}
+
+.logo{opacity:0;animation:fadeUp 1.2s ease .3s forwards;}
+
+.divider{
+  width:40px;
+  height:1px;
+  background:var(--gold);
+  margin:40px auto;
+  opacity:0;
+  animation:fadeIn 1s ease 1s forwards;
+}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:9px;
+  letter-spacing:.6em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  opacity:0;
+  animation:fadeUp .8s ease 1.2s forwards;
+}
+
+.tagline{
+  font-family:var(--serif);
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:300;
+  font-style:italic;
+  color:rgba(10,10,10,.45);
+  line-height:1.8;
+  margin-bottom:52px;
+  opacity:0;
+  animation:fadeUp .8s ease 1.4s forwards;
+}
+
+.countdown-wrap{
+  display:flex;
+  gap:40px;
+  align-items:flex-start;
+  justify-content:center;
+  margin-bottom:52px;
+  opacity:0;
+  animation:fadeUp .8s ease 1.6s forwards;
+}
+.countdown-block{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.countdown-num{
+  font-family:var(--display);
+  font-size:clamp(44px,6vw,76px);
+  font-weight:400;
+  line-height:1;
+  color:var(--black);
+  min-width:2ch;
+  text-align:center;
+  letter-spacing:.05em;
+}
+.countdown-label{
+  font-size:8px;
+  letter-spacing:.5em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.countdown-sep{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,56px);
+  color:rgba(201,168,76,.3);
+  line-height:1;
+  padding-top:6px;
+}
+
+.date-line{
+  font-family:var(--sans);
+  font-size:10px;
+  letter-spacing:.5em;
+  text-transform:uppercase;
+  color:rgba(10,10,10,.2);
+  margin-bottom:52px;
+  opacity:0;
+  animation:fadeIn 1s ease 1.8s forwards;
+}
+.date-line span{color:var(--gold);}
+
+/* Newsletter */
+.newsletter{
+  display:flex;
+  gap:0;
+  width:100%;
+  max-width:420px;
+  opacity:0;
+  animation:fadeUp .8s ease 2s forwards;
+  border:1px solid rgba(10,10,10,.12);
+}
+.newsletter input{
+  flex:1;
+  background:transparent;
+  border:none;
+  border-right:1px solid rgba(10,10,10,.12);
+  color:var(--black);
+  font-family:var(--sans);
+  font-size:12px;
+  padding:16px 20px;
+  outline:none;
+  transition:border-color .3s;
+}
+.newsletter input::placeholder{color:rgba(10,10,10,.25);}
+.newsletter input:focus{border-right-color:var(--gold);}
+.newsletter button{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--sans);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  padding:16px 24px;
+  border:none;
+  cursor:pointer;
+  transition:background .3s;
+  white-space:nowrap;
+}
+.newsletter button:hover{background:var(--gold);color:var(--black);}
+.newsletter-success{
+  display:none;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:14px;
+  color:var(--gold);
+  letter-spacing:.1em;
+  margin-top:16px;
+}
+
+/* Socials */
+.socials{
+  display:flex;
+  gap:32px;
+  margin-top:44px;
+  opacity:0;
+  animation:fadeIn 1s ease 2.2s forwards;
+}
+.socials a{
+  font-size:9px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:rgba(10,10,10,.25);
+  text-decoration:none;
+  transition:color .3s;
+}
+.socials a:hover{color:var(--black);}
+
+/* Note bas */
+.note{
+  position:fixed;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:rgba(10,10,10,.15);
+  white-space:nowrap;
+  opacity:0;
+  animation:fadeIn 1s ease 2.4s forwards;
+}
+
+/* Ligne décorative haut */
+.top-line{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity:0.6;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:600px){
+  .countdown-wrap{gap:20px;}
+  .countdown-sep{display:none;}
+  .newsletter{flex-direction:column;}
+  .newsletter input{border-right:none;border-bottom:1px solid rgba(10,10,10,.12);}
+  .newsletter button{padding:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="top-line"></div>
+
+<div class="content">
+  <div class="logo">
+    <img src="vzn-logo-black.png" alt="VZN" style="width:clamp(160px,26vw,280px);display:block;margin:0 auto;">
+  </div>
+
+  <div class="divider"></div>
+
+  <span class="eyebrow">Drop I — Bientôt</span>
+
+  <p class="tagline">Legends never die.<br>They become eternal.</p>
+
+  <div class="countdown-wrap">
+    <div class="countdown-block">
+      <span class="countdown-num" id="cd-days">--</span>
+      <span class="countdown-label">Jours</span>
+    </div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block">
+      <span class="countdown-num" id="cd-hours">--</span>
+      <span class="countdown-label">Heures</span>
+    </div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block">
+      <span class="countdown-num" id="cd-mins">--</span>
+      <span class="countdown-label">Minutes</span>
+    </div>
+    <span class="countdown-sep">·</span>
+    <div class="countdown-block">
+      <span class="countdown-num" id="cd-secs">--</span>
+      <span class="countdown-label">Secondes</span>
+    </div>
+  </div>
+
+  <p class="date-line">Précommande ouverte le <span>15 avril 2026</span></p>
+
+  <div style="width:100%;max-width:420px;">
+    <div class="newsletter" id="newsletterForm">
+      <input type="email" id="waitEmail" placeholder="ton@email.com">
+      <button onclick="joinWaitlist()">Rejoindre</button>
+    </div>
+    <div class="newsletter-success" id="waitSuccess">✦ &nbsp;Tu seras parmi les premiers à savoir.</div>
+    <div class="newsletter-success" id="waitError" style="color:rgba(10,10,10,.3);">Une erreur est survenue. Réessaie.</div>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.tiktok.com/@vizion.official" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/vizion_clothes" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<span class="note">vzn-official.com &nbsp;·&nbsp; Brodé à la main en Suisse</span>
+
+<script>
+var target = new Date('2026-04-15T18:00:00+02:00').getTime();
+function updateCountdown(){
+  var diff = target - Date.now();
+  if(diff<=0){['days','hours','mins','secs'].forEach(function(id){document.getElementById('cd-'+id).textContent='00';});return;}
+  document.getElementById('cd-days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+function joinWaitlist(){
+  var email = document.getElementById('waitEmail').value.trim();
+  if(!email || !email.includes('@')) return;
+  var btn = document.querySelector('#newsletterForm button');
+  btn.textContent = '...';
+  btn.disabled = true;
+  var url = 'https://vzn-official.us20.list-manage.com/subscribe/post-json?u=100ec78929f6a2a7d1bf62802&id=647dc7d539&f_id=005220eef0&EMAIL=' + encodeURIComponent(email) + '&c=mailchimpCallback';
+  var script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+  setTimeout(function(){
+    if(document.getElementById('newsletterForm').style.display !== 'none'){
+      document.getElementById('newsletterForm').style.display = 'none';
+      document.getElementById('waitSuccess').style.display = 'block';
+    }
+  }, 4000);
+}
+function mailchimpCallback(data){
+  document.getElementById('newsletterForm').style.display = 'none';
+  if(data.result === 'success' || data.result === 'error' && data.msg.includes('already subscribed')){
+    document.getElementById('waitSuccess').style.display = 'block';
+  } else {
+    document.getElementById('waitError').style.display = 'block';
+    setTimeout(function(){
+      document.getElementById('waitError').style.display = 'none';
+      var btn = document.querySelector('#newsletterForm button');
+      btn.textContent = 'Rejoindre'; btn.disabled = false;
+      document.getElementById('newsletterForm').style.display = 'flex';
+    }, 3000);
+  }
+}
+</script>
+</body>
+</html>
