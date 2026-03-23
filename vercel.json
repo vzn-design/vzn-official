@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/nike-victoire-samothrace", "destination": "/blog/nike-victoire-samothrace.html" },
+    { "source": "/blog/icare-mythe-ambition", "destination": "/blog/icare-mythe-ambition.html" },
+    { "source": "/blog/zeus-dieu-foudre", "destination": "/blog/zeus-dieu-foudre.html" },
+    { "source": "/blog/meduse-histoire-vraie", "destination": "/blog/meduse-histoire-vraie.html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
