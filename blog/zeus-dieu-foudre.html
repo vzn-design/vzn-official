@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeus : le dieu de la foudre qui a défini le pouvoir absolu — VZN Blog</title>
+  <meta name="description" content="Fils d'un père qui dévorait ses enfants, vainqueur d'une guerre de dix ans contre les Titans. L'histoire complète de Zeus, roi de l'Olympe et dieu de la foudre.">
+  <meta property="og:title" content="Zeus : le dieu de la foudre qui a défini le pouvoir absolu">
+  <meta property="og:description" content="Avant lui, la tempête n'avait pas de nom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--white:#FAFAF8;--stone:#F0EDE6;--stone2:#E8E4DC;--gold:#C9A84C;--mid:rgba(10,10,10,0.45);--mid2:rgba(10,10,10,0.25);--serif:'Cormorant Garamond',serif;--display:'Cinzel',serif;--sans:'Karla',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.top-accent{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:300;opacity:.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;transition:background .4s,padding .4s;}
+nav.scrolled{background:rgba(250,250,248,.95);backdrop-filter:blur(20px);padding:18px 48px;border-bottom:1px solid rgba(10,10,10,.08);}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:48px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-links a:hover{color:var(--black);}
+.nav-back{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-back:hover{color:var(--black);}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}}
+.article-header{padding:160px 48px 80px;max-width:760px;margin:0 auto;border-bottom:1px solid rgba(10,10,10,.08);}
+.article-breadcrumb{display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid2);margin-bottom:32px;}
+.article-breadcrumb a:hover{color:var(--gold);}
+.article-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:20px;}
+.article-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;margin-bottom:24px;}
+.article-subtitle{font-family:var(--serif);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--mid);line-height:1.6;}
+.article-meta{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(10,10,10,.08);}
+.article-meta-item{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid2);}
+.article-meta-item span{color:var(--black);display:block;margin-top:4px;}
+.article-body{max-width:760px;margin:0 auto;padding:80px 48px 60px;}
+.article-body h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.15;margin:56px 0 24px;color:var(--black);}
+.article-body h2:first-child{margin-top:0;}
+.article-body p{font-size:15px;color:rgba(10,10,10,.65);line-height:2;margin-bottom:24px;letter-spacing:.02em;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body blockquote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:var(--stone);}
+.article-body blockquote p{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--black);margin:0;line-height:1.6;}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:56px 0;}
+.article-cta{margin:80px 0 0;padding:56px;background:var(--stone);display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.article-cta-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.article-cta-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.1;margin-bottom:12px;}
+.article-cta-sub{font-size:13px;color:var(--mid);line-height:1.8;}
+.article-cta-btn{flex-shrink:0;display:inline-block;background:var(--black);color:var(--white);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:18px 32px;transition:background .3s;}
+.article-cta-btn:hover{background:var(--gold);color:var(--black);}
+@media(max-width:700px){.article-cta{flex-direction:column;padding:36px 28px;}.article-cta-btn{width:100%;text-align:center;}}
+.related-section{max-width:760px;margin:0 auto;padding:0 48px 120px;}
+.related-title{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;display:block;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.related-card{background:var(--stone);padding:28px 24px;transition:background .3s;}
+.related-card:hover{background:var(--stone2);}
+.related-card-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+.related-card-title{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.2;margin-bottom:12px;color:var(--black);}
+.related-card-link{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.related-card:hover .related-card-link{color:var(--black);}
+@media(max-width:700px){.article-header,.article-body,.related-section{padding-left:24px;padding-right:24px;}.related-grid{grid-template-columns:1fr;}}
+footer{background:var(--black);padding:40px 48px;border-top:1px solid rgba(201,168,76,.12);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;}
+.footer-links-row{display:flex;gap:32px;}
+.footer-links-row a{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;transition:color .3s;}
+.footer-links-row a:hover{color:var(--gold);}
+@media(max-width:600px){footer{padding:32px 24px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}.footer-links-row{flex-wrap:wrap;justify-content:center;}}
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<nav id="mainNav">
+  <div class="nav-logo"><a href="/"><img src="/vzn-logo-black.png" alt="VZN"></a></div>
+  <ul class="nav-links">
+    <li><a href="/#histoire">Histoire</a></li>
+    <li><a href="/#collection">Collection</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/blog" class="nav-back">← Blog</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-breadcrumb"><a href="/blog">Blog</a><span>/</span><span>Mythologie grecque</span></div>
+  <span class="article-tag">Mythologie grecque</span>
+  <h1 class="article-title">Zeus : le dieu de la foudre qui a défini le pouvoir absolu</h1>
+  <p class="article-subtitle">Avant lui, la tempête n'avait pas de nom.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Collection<span>ZEUS — AETERNA</span></div>
+    <div class="article-meta-item">Thème<span>Mythologie grecque</span></div>
+    <div class="article-meta-item">Lecture<span>6 minutes</span></div>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <h2>Qui est Zeus dans la mythologie grecque ?</h2>
+  <p>Zeus est le roi des dieux de l'Olympe, dieu du ciel, de la foudre et de la justice. Il est le fils de Cronos et de Rhéa, deux Titans qui régnaient sur le monde avant lui. Son histoire commence avant même sa naissance — par une prophétie qui aurait dû l'empêcher d'exister.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>L'enfant qui ne devait pas survivre</h2>
+  <p>Cronos, le père de Zeus, avait reçu une prophétie : l'un de ses enfants le renverserait du pouvoir, exactement comme lui avait renversé son propre père Ouranos. Sa solution était radicale. À chaque naissance, Cronos dévorait ses enfants.</p>
+  <p>Héra, Déméter, Poséidon, Hadès — tous avalés vivants par leur père.</p>
+  <p>Quand Rhéa mit Zeus au monde, elle refusa de laisser son dernier enfant subir ce sort. Elle enveloppa une pierre dans des langes et la tendit à Cronos, qui l'avala sans regarder. Zeus, lui, fut caché sur l'île de Crète, élevé en secret par des nymphes.</p>
+
+  <blockquote><p>"Certaines présences n'ont pas besoin de crier pour remplir la pièce."</p></blockquote>
+
+  <h2>La guerre des Titans</h2>
+  <p>Devenu adulte, Zeus retourna auprès de son père et le força à régurgiter ses frères et sœurs. Ensemble, ils menèrent une guerre de dix ans contre les Titans — la Titanomachie. Une guerre si violente qu'elle ébranlait les fondations du monde.</p>
+  <p>Zeus et ses frères et sœurs finirent par vaincre. Les Titans furent précipités dans le Tartare, les profondeurs les plus sombres des Enfers. Zeus devint le maître du monde et divisa le cosmos entre les trois frères — le ciel pour lui, la mer pour Poséidon, les Enfers pour Hadès.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>La foudre : plus qu'une arme</h2>
+  <p>La foudre de Zeus n'était pas juste une arme de guerre. C'était l'expression visible de son autorité. Quand Zeus frappait de sa foudre, ce n'était pas de la colère aveugle — c'était un jugement. Un verdict rendu par le dieu de la justice.</p>
+  <p>Les éclairs étaient forgés par les Cyclopes, ces géants à un œil qui vivaient dans les profondeurs de la terre. Il existait <strong>trois types de foudre</strong> : l'une pour avertir, l'une pour punir, et la troisième — la plus puissante — réservée aux ennemis les plus redoutables.</p>
+  <p>Zeus ne cherchait pas à convaincre. Il tranchait. Et le monde obéissait.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>Zeus dans la culture contemporaine</h2>
+  <p>La figure de Zeus a traversé les siècles sans jamais disparaître. Dans les films, les jeux vidéo, la littérature contemporaine — Zeus reste l'archétype du pouvoir absolu, du chef qui tranche sans hésiter.</p>
+  <p>Le mont Olympe, résidence des dieux dans la mythologie grecque, est aussi le plus haut sommet de Grèce avec ses 2 917 mètres. Il existe réellement, dans le nord du pays, et attire aujourd'hui des milliers de randonneurs chaque année.</p>
+  <p>Son image est omniprésente — des logos de marques aux films hollywoodiens, Zeus reste la figure de référence quand on veut incarner une autorité qui ne se discute pas.</p>
+
+  <div class="article-cta">
+    <div>
+      <span class="article-cta-tag">AETERNA by VZN — Drop I</span>
+      <h3 class="article-cta-title">ZEUS — AETERNA</h3>
+      <p class="article-cta-sub">Brodé à la main en Suisse. Édition limitée à 10 pièces.<br>CHF 169 — Précommande ouverte.</p>
+    </div>
+    <a href="/#collection" class="article-cta-btn">Voir le hoodie →</a>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <span class="related-title">Autres articles</span>
+  <div class="related-grid">
+    <a href="/blog/nike-victoire-samothrace" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Nike, la Victoire de Samothrace</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/icare-mythe-ambition" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Icare et la chute du soleil</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/meduse-histoire-vraie" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Méduse, l'histoire vraie</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 VZN — Genolier, Suisse</span>
+    <div class="footer-links-row">
+      <a href="/">Site</a><a href="/blog">Blog</a>
+      <a href="https://www.instagram.com/vizion_clothes" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@vizion.official" target="_blank">TikTok</a>
+    </div>
+  </div>
+</footer>
+<script>const nav=document.querySelector('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));</script>
+</body>
+</html>

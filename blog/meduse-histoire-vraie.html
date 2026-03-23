@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Méduse : l'histoire vraie du monstre qui n'en était pas un — VZN Blog</title>
+  <meta name="description" content="Méduse n'est pas née monstre. Elle était prêtresse, belle, innocente. L'histoire complète de Méduse dans la mythologie grecque et sa réinterprétation contemporaine.">
+  <meta property="og:title" content="Méduse : l'histoire vraie du monstre qui n'en était pas un">
+  <meta property="og:description" content="Punie pour ce qu'on lui a fait.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--white:#FAFAF8;--stone:#F0EDE6;--stone2:#E8E4DC;--gold:#C9A84C;--mid:rgba(10,10,10,0.45);--mid2:rgba(10,10,10,0.25);--serif:'Cormorant Garamond',serif;--display:'Cinzel',serif;--sans:'Karla',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.top-accent{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:300;opacity:.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;transition:background .4s,padding .4s;}
+nav.scrolled{background:rgba(250,250,248,.95);backdrop-filter:blur(20px);padding:18px 48px;border-bottom:1px solid rgba(10,10,10,.08);}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:48px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-links a:hover{color:var(--black);}
+.nav-back{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-back:hover{color:var(--black);}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}}
+.article-header{padding:160px 48px 80px;max-width:760px;margin:0 auto;border-bottom:1px solid rgba(10,10,10,.08);}
+.article-breadcrumb{display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid2);margin-bottom:32px;}
+.article-breadcrumb a:hover{color:var(--gold);}
+.article-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:20px;}
+.article-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;margin-bottom:24px;}
+.article-subtitle{font-family:var(--serif);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--mid);line-height:1.6;}
+.article-meta{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(10,10,10,.08);}
+.article-meta-item{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid2);}
+.article-meta-item span{color:var(--black);display:block;margin-top:4px;}
+.article-body{max-width:760px;margin:0 auto;padding:80px 48px 60px;}
+.article-body h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.15;margin:56px 0 24px;color:var(--black);}
+.article-body h2:first-child{margin-top:0;}
+.article-body p{font-size:15px;color:rgba(10,10,10,.65);line-height:2;margin-bottom:24px;letter-spacing:.02em;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body blockquote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:var(--stone);}
+.article-body blockquote p{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--black);margin:0;line-height:1.6;}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:56px 0;}
+.article-cta{margin:80px 0 0;padding:56px;background:var(--stone);display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.article-cta-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.article-cta-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.1;margin-bottom:12px;}
+.article-cta-sub{font-size:13px;color:var(--mid);line-height:1.8;}
+.article-cta-btn{flex-shrink:0;display:inline-block;background:var(--black);color:var(--white);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:18px 32px;transition:background .3s;}
+.article-cta-btn:hover{background:var(--gold);color:var(--black);}
+@media(max-width:700px){.article-cta{flex-direction:column;padding:36px 28px;}.article-cta-btn{width:100%;text-align:center;}}
+.related-section{max-width:760px;margin:0 auto;padding:0 48px 120px;}
+.related-title{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;display:block;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.related-card{background:var(--stone);padding:28px 24px;transition:background .3s;}
+.related-card:hover{background:var(--stone2);}
+.related-card-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+.related-card-title{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.2;margin-bottom:12px;color:var(--black);}
+.related-card-link{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.related-card:hover .related-card-link{color:var(--black);}
+@media(max-width:700px){.article-header,.article-body,.related-section{padding-left:24px;padding-right:24px;}.related-grid{grid-template-columns:1fr;}}
+footer{background:var(--black);padding:40px 48px;border-top:1px solid rgba(201,168,76,.12);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;}
+.footer-links-row{display:flex;gap:32px;}
+.footer-links-row a{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;transition:color .3s;}
+.footer-links-row a:hover{color:var(--gold);}
+@media(max-width:600px){footer{padding:32px 24px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}.footer-links-row{flex-wrap:wrap;justify-content:center;}}
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<nav id="mainNav">
+  <div class="nav-logo"><a href="/"><img src="/vzn-logo-black.png" alt="VZN"></a></div>
+  <ul class="nav-links">
+    <li><a href="/#histoire">Histoire</a></li>
+    <li><a href="/#collection">Collection</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/blog" class="nav-back">← Blog</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-breadcrumb"><a href="/blog">Blog</a><span>/</span><span>Mythologie grecque</span></div>
+  <span class="article-tag">Mythologie grecque</span>
+  <h1 class="article-title">Méduse : l'histoire vraie du monstre qui n'en était pas un</h1>
+  <p class="article-subtitle">Punie pour ce qu'on lui a fait.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Collection<span>MEDUSA — AETERNA</span></div>
+    <div class="article-meta-item">Thème<span>Mythologie grecque</span></div>
+    <div class="article-meta-item">Lecture<span>7 minutes</span></div>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <h2>Qui est Méduse dans la mythologie grecque ?</h2>
+  <p>Méduse est l'une des trois Gorgones — des créatures de la mythologie grecque dont le regard transformait en pierre quiconque croisait leurs yeux. Ses deux sœurs, Sthéno et Euryale, étaient immortelles. Méduse, elle, était mortelle.</p>
+  <p>Mais l'histoire de Méduse ne commence pas avec ses serpents ni avec son regard pétrifiant. Elle commence bien avant — quand elle était encore humaine.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>Avant les serpents : Méduse prêtresse d'Athéna</h2>
+  <p>Dans la version originale du mythe racontée par le poète Ovide, Méduse n'est pas née monstre. Elle était une jeune femme d'une beauté extraordinaire, prêtresse dans le temple d'Athéna — déesse de la sagesse et de la guerre.</p>
+  <p>Poséidon, dieu des mers, la remarqua. Et sans son consentement, la viola dans le temple même d'Athéna.</p>
+  <p>Ce qui suivit est l'une des injustices les plus frappantes de la mythologie grecque. Athéna, dont le temple sacré avait été profané, ne punit pas Poséidon — un dieu de rang égal au sien. <strong>Elle punit Méduse.</strong> Elle transforma ses cheveux en serpents, rendit son regard si terrible que quiconque la regardait dans les yeux était immédiatement pétrifié.</p>
+
+  <blockquote><p>"Son seul crime fut d'être belle dans un monde où les puissants n'avaient pas à rendre de comptes."</p></blockquote>
+
+  <h2>L'exil et la mort</h2>
+  <p>Défigurée et terrifiante, Méduse fut contrainte à l'exil. Elle s'installa au bout du monde connu, dans une caverne au-delà de l'Océan, entourée des statues de pierre de ceux qui avaient eu le malheur de croiser son regard.</p>
+  <p>C'est là que Persée la trouva. Envoyé par le roi Polydectès dans une mission destinée à le tuer, Persée reçut l'aide des dieux — un bouclier poli d'Athéna pour ne regarder Méduse qu'en reflet, des sandales ailées d'Hermès pour s'approcher sans bruit, une épée d'adamante. Il décapita Méduse pendant son sommeil.</p>
+  <p>Du sang de Méduse naquit Pégase — le cheval ailé. Sa tête, transformée en arme, fut utilisée par Persée pour pétrifier ses ennemis. Même morte, Méduse était utilisée comme outil par ceux qui lui avaient tout pris.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>Méduse et le féminisme contemporain</h2>
+  <p>Depuis quelques décennies, l'histoire de Méduse est relue à travers un prisme différent. Des philosophes, des écrivaines et des artistes contemporains ont réinterprété son mythe non pas comme l'histoire d'un monstre, mais comme celle d'une victime punie pour ce qu'on lui a fait.</p>
+  <p>Son image est aujourd'hui utilisée dans des mouvements féministes comme symbole de la femme qui refuse d'être réduite à sa souffrance. Une figure qui, après avoir été violentée et transformée en monstre, est devenue si puissante que même les héros avaient peur d'elle.</p>
+  <p>Versace a fait de la tête de Méduse son logo. Gianni Versace expliquait qu'il avait choisi cette figure parce qu'elle rendait les gens amoureux et incapables de s'en échapper — une métaphore de la mode comme pouvoir de fascination.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>La Méduse de Caravage : un regard différent</h2>
+  <p>En 1597, le peintre italien Caravage réalisa une Méduse sur un bouclier circulaire. Ce qui rend cette œuvre unique, c'est l'expression du visage de Méduse au moment de sa décapitation — pas de la terreur, pas de la rage. Quelque chose de plus complexe. Comme si elle regardait enfin quelqu'un qui la voyait vraiment.</p>
+  <p>Cette œuvre est aujourd'hui conservée aux Offices de Florence, et continue d'interroger ceux qui la regardent — qui est vraiment le monstre dans cette histoire ?</p>
+
+  <div class="article-cta">
+    <div>
+      <span class="article-cta-tag">AETERNA by VZN — Drop I</span>
+      <h3 class="article-cta-title">MEDUSA — AETERNA</h3>
+      <p class="article-cta-sub">Brodé à la main en Suisse. Édition limitée à 10 pièces.<br>CHF 169 — Précommande ouverte.</p>
+    </div>
+    <a href="/#collection" class="article-cta-btn">Voir le hoodie →</a>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <span class="related-title">Autres articles</span>
+  <div class="related-grid">
+    <a href="/blog/nike-victoire-samothrace" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Nike, la Victoire de Samothrace</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/icare-mythe-ambition" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Icare et la chute du soleil</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/zeus-dieu-foudre" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Zeus, dieu de la foudre</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 VZN — Genolier, Suisse</span>
+    <div class="footer-links-row">
+      <a href="/">Site</a><a href="/blog">Blog</a>
+      <a href="https://www.instagram.com/vizion_clothes" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@vizion.official" target="_blank">TikTok</a>
+    </div>
+  </div>
+</footer>
+<script>const nav=document.querySelector('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));</script>
+</body>
+</html>

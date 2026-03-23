@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icare et la chute du soleil : le mythe qui définit l'ambition humaine — VZN Blog</title>
+  <meta name="description" content="Il savait ce qui allait arriver. Et il a continué à monter quand même. L'histoire du mythe d'Icare et ce qu'il dit vraiment sur l'ambition humaine.">
+  <meta property="og:title" content="Icare et la chute du soleil : le mythe qui définit l'ambition humaine">
+  <meta property="og:description" content="Il savait exactement ce qui allait arriver. Et il a choisi le soleil quand même.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0A0A0A;--white:#FAFAF8;--stone:#F0EDE6;--stone2:#E8E4DC;--gold:#C9A84C;--mid:rgba(10,10,10,0.45);--mid2:rgba(10,10,10,0.25);--serif:'Cormorant Garamond',serif;--display:'Cinzel',serif;--sans:'Karla',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.top-accent{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:300;opacity:.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;transition:background .4s,padding .4s;}
+nav.scrolled{background:rgba(250,250,248,.95);backdrop-filter:blur(20px);padding:18px 48px;border-bottom:1px solid rgba(10,10,10,.08);}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:48px;list-style:none;}
+.nav-links a{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-links a:hover{color:var(--black);}
+.nav-back{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
+.nav-back:hover{color:var(--black);}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}}
+.article-header{padding:160px 48px 80px;max-width:760px;margin:0 auto;border-bottom:1px solid rgba(10,10,10,.08);}
+.article-breadcrumb{display:flex;gap:8px;align-items:center;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mid2);margin-bottom:32px;}
+.article-breadcrumb a:hover{color:var(--gold);}
+.article-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:20px;}
+.article-title{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;margin-bottom:24px;}
+.article-subtitle{font-family:var(--serif);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--mid);line-height:1.6;}
+.article-meta{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(10,10,10,.08);}
+.article-meta-item{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid2);}
+.article-meta-item span{color:var(--black);display:block;margin-top:4px;}
+.article-body{max-width:760px;margin:0 auto;padding:80px 48px 60px;}
+.article-body h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.15;margin:56px 0 24px;color:var(--black);}
+.article-body h2:first-child{margin-top:0;}
+.article-body p{font-size:15px;color:rgba(10,10,10,.65);line-height:2;margin-bottom:24px;letter-spacing:.02em;}
+.article-body strong{color:var(--black);font-weight:600;}
+.article-body blockquote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:var(--stone);}
+.article-body blockquote p{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--black);margin:0;line-height:1.6;}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:56px 0;}
+.article-cta{margin:80px 0 0;padding:56px;background:var(--stone);display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.article-cta-tag{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.article-cta-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;line-height:1.1;margin-bottom:12px;}
+.article-cta-sub{font-size:13px;color:var(--mid);line-height:1.8;}
+.article-cta-btn{flex-shrink:0;display:inline-block;background:var(--black);color:var(--white);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;padding:18px 32px;transition:background .3s;}
+.article-cta-btn:hover{background:var(--gold);color:var(--black);}
+@media(max-width:700px){.article-cta{flex-direction:column;padding:36px 28px;}.article-cta-btn{width:100%;text-align:center;}}
+.related-section{max-width:760px;margin:0 auto;padding:0 48px 120px;}
+.related-title{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;display:block;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.related-card{background:var(--stone);padding:28px 24px;transition:background .3s;}
+.related-card:hover{background:var(--stone2);}
+.related-card-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+.related-card-title{font-family:var(--serif);font-size:18px;font-weight:300;line-height:1.2;margin-bottom:12px;color:var(--black);}
+.related-card-link{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.related-card:hover .related-card-link{color:var(--black);}
+@media(max-width:700px){.article-header,.article-body,.related-section{padding-left:24px;padding-right:24px;}.related-grid{grid-template-columns:1fr;}}
+footer{background:var(--black);padding:40px 48px;border-top:1px solid rgba(201,168,76,.12);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;}
+.footer-links-row{display:flex;gap:32px;}
+.footer-links-row a{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;transition:color .3s;}
+.footer-links-row a:hover{color:var(--gold);}
+@media(max-width:600px){footer{padding:32px 24px;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}.footer-links-row{flex-wrap:wrap;justify-content:center;}}
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<nav id="mainNav">
+  <div class="nav-logo"><a href="/"><img src="/vzn-logo-black.png" alt="VZN"></a></div>
+  <ul class="nav-links">
+    <li><a href="/#histoire">Histoire</a></li>
+    <li><a href="/#collection">Collection</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/blog" class="nav-back">← Blog</a>
+</nav>
+
+<header class="article-header">
+  <div class="article-breadcrumb"><a href="/blog">Blog</a><span>/</span><span>Mythologie grecque</span></div>
+  <span class="article-tag">Mythologie grecque</span>
+  <h1 class="article-title">Icare et la chute du soleil : le mythe qui définit l'ambition humaine</h1>
+  <p class="article-subtitle">Il savait exactement ce qui allait arriver. Et il a choisi le soleil quand même.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Collection<span>ICARUS — AETERNA</span></div>
+    <div class="article-meta-item">Thème<span>Mythologie grecque</span></div>
+    <div class="article-meta-item">Lecture<span>6 minutes</span></div>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <h2>Qui est Icare dans la mythologie grecque ?</h2>
+  <p>Icare est le fils de Dédale, l'architecte et inventeur le plus brillant de l'Antiquité grecque. Son histoire n'est pas celle d'un héros, ni celle d'un dieu. C'est celle d'un homme ordinaire à qui son père a donné quelque chose d'extraordinaire — et qui n'a pas su s'en contenter.</p>
+  <p>Dédale était au service du roi Minos de Crète. C'est lui qui avait construit le Labyrinthe, cette prison souterraine conçue pour y enfermer le Minotaure — mi-homme, mi-taureau. Quand Minos décida d'emprisonner Dédale et son fils sur l'île pour qu'ils ne révèlent pas les secrets du Labyrinthe, Dédale comprit qu'il n'y avait qu'une seule issue. Pas par la mer — surveillée. Pas par la terre — impossible. Mais par les airs.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>Les ailes de plumes et de cire</h2>
+  <p>Dédale passa des semaines à observer les oiseaux. Il collecta des plumes, les assembla avec de la cire, et fabriqua deux paires d'ailes. La sienne et celle de son fils.</p>
+  <p>Avant de s'envoler, il prit Icare par les épaules et lui donna deux avertissements précis. <strong>Ne vole pas trop bas</strong> — l'humidité de la mer alourdirait les plumes et vous ferait tomber. <strong>Ne vole pas trop haut</strong> — la chaleur du soleil ferait fondre la cire et les ailes se désintégreraient.</p>
+  <p>Icare écouta. Il hocha la tête. Et ils s'envolèrent.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>La montée vers le soleil</h2>
+  <p>Dans les premières minutes du vol, Icare suivit son père. Il resta à la bonne altitude, sentit le vent sous ses ailes, vit la Crète rapetisser sous lui. Et alors quelque chose se passa.</p>
+  <p>La liberté totale. L'absence de limite. Le sentiment que rien ni personne ne pouvait l'atteindre là-haut. Icare commença à monter. Son père criait. Il n'entendait plus.</p>
+  <p>Il monta vers le soleil. La cire fondit. Les plumes se détachèrent une à une. Et Icare tomba dans la mer qui porte encore son nom aujourd'hui — la mer Icarienne, entre les îles grecques de Samos et d'Icaria.</p>
+
+  <blockquote><p>"Tout le monde se souvient de la chute. Personne ne parle du vol."</p></blockquote>
+
+  <h2>Ce que le mythe d'Icare nous dit vraiment</h2>
+  <p>L'interprétation la plus commune de ce mythe est simple : l'orgueil mène à la chute. Ne vole pas trop haut. Reste à ta place. Obéis aux règles.</p>
+  <p>Mais il existe une autre lecture. Icare savait exactement ce qu'il faisait. Son père lui avait tout expliqué. Il avait compris les conséquences. Et il a choisi le soleil quand même. Pas par ignorance — par choix délibéré.</p>
+  <p>Ce que le mythe d'Icare capture, c'est l'hybris — ce mot grec qui désigne la démesure, l'excès qui pousse l'être humain à dépasser ses limites naturelles. L'hybris n'est pas de la stupidité. C'est une forme de courage poussé à l'extrême. La certitude que le vol vaut la chute.</p>
+  <p>Trois mille ans plus tard, tout le monde se souvient d'Icare. Pas de ceux qui sont restés sur l'île.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>La mer Icarienne : une trace éternelle</h2>
+  <p>La mer Icarienne existe réellement. C'est la partie de la mer Égée située entre les îles grecques de Samos, Patmos et la côte turque. Elle porte ce nom depuis l'Antiquité, en mémoire de la chute d'Icare.</p>
+  <p>L'île d'Icaria existe elle aussi — une île grecque connue pour la longévité exceptionnelle de ses habitants. Une ironie du destin que l'île qui porte le nom du jeune homme mort trop jeune soit aujourd'hui célèbre pour la vie longue.</p>
+
+  <div class="article-cta">
+    <div>
+      <span class="article-cta-tag">AETERNA by VZN — Drop I</span>
+      <h3 class="article-cta-title">ICARUS — AETERNA</h3>
+      <p class="article-cta-sub">Brodé à la main en Suisse. Édition limitée à 10 pièces.<br>CHF 169 — Précommande ouverte.</p>
+    </div>
+    <a href="/#collection" class="article-cta-btn">Voir le hoodie →</a>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <span class="related-title">Autres articles</span>
+  <div class="related-grid">
+    <a href="/blog/nike-victoire-samothrace" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Nike, la Victoire de Samothrace</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/zeus-dieu-foudre" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Zeus, dieu de la foudre</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+    <a href="/blog/meduse-histoire-vraie" class="related-card">
+      <span class="related-card-tag">Mythologie</span>
+      <h3 class="related-card-title">Méduse, l'histoire vraie</h3>
+      <span class="related-card-link">Lire →</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 VZN — Genolier, Suisse</span>
+    <div class="footer-links-row">
+      <a href="/">Site</a><a href="/blog">Blog</a>
+      <a href="https://www.instagram.com/vizion_clothes" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@vizion.official" target="_blank">TikTok</a>
+    </div>
+  </div>
+</footer>
+<script>
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+</script>
+</body>
+</html>
