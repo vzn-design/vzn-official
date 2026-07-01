@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VZN — Page introuvable</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#FAFAF8;color:#0A0A0A;
+  font-family:'Karla',sans-serif;
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:40px 24px;
+}
+.top-line{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,#C0392B,transparent);opacity:.6;}
+.code{
+  font-family:'Cinzel',serif;
+  font-size:clamp(80px,15vw,160px);
+  font-weight:300;letter-spacing:.1em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(192,57,43,.2);
+  line-height:1;margin-bottom:8px;
+}
+.title{
+  font-family:'Cinzel',serif;
+  font-size:clamp(18px,3vw,28px);
+  font-weight:300;letter-spacing:.15em;
+  margin-bottom:16px;color:#0A0A0A;
+}
+.sub{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:clamp(15px,2vw,20px);
+  color:rgba(10,10,10,.4);margin-bottom:48px;
+}
+.btn{
+  background:#C0392B;color:#fff;
+  font-family:'Karla',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;
+  padding:16px 40px;text-decoration:none;display:inline-block;
+  transition:background .3s;
+}
+.btn:hover{background:#e74c3c;}
+.footer-note{
+  position:fixed;bottom:24px;
+  font-size:10px;letter-spacing:.2em;color:rgba(10,10,10,.2);
+  text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<div class="top-line"></div>
+<p class="code">404</p>
+<h1 class="title">Page introuvable</h1>
+<p class="sub">Cette page n'existe pas — ou plus.</p>
+<a href="/" class="btn">Retour à l'accueil</a>
+<p class="footer-note">VZN — AETERNA · vzn-official.com</p>
+</body>
+</html>
