@@ -1366,7 +1366,7 @@ button.matiere-tag{background:none;cursor:pointer;}
 
 <!-- NAV -->
 <div class="preorder-bar" id="preorderBar">
-  <span>Précommande ouverte</span>
+  <span>Précommande ouverte jusuqu'au</span>
   <span class="sep">·</span>
   <span class="timer" id="preorderTimer">--</span>
   <span class="sep">·</span>
@@ -1534,7 +1534,7 @@ button.matiere-tag{background:none;cursor:pointer;}
       <div class="process-item reveal">
         <span class="process-num">02</span>
         <h3 class="process-title">La technique</h3>
-        <p class="process-desc">Le t-shirt est imprimé en sérigraphie dans un atelier genevois. Encres haute qualité, précision maximale sur fond noir et blanc. Le logo VZN est imprimé en sérigraphie sur la poitrine gauche.</p>
+        <p class="process-desc">Le t-shirt est imprimé en sérigraphie dans un atelier genevois. Encres haute qualité, précision maximale sur fond noir et blanc. Le logo VZN est brodé sur la poitrine gauche.</p>
       </div>
       <div class="process-item reveal">
         <span class="process-num">03</span>
@@ -2034,7 +2034,7 @@ document.querySelectorAll('.pcard').forEach(card=>{
 
 // ══ COUNTDOWN ══
 (function(){
-  const end=new Date('2026-08-01T16:00:00Z').getTime();
+  const end=new Date('2026-08-14T16:00:00Z').getTime();
   const el=document.getElementById('preorderTimer');
   if(!el)return;
   function update(){
